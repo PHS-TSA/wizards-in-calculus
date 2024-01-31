@@ -36,7 +36,7 @@ script = ExtResource("3_sw5yd")
 
 [node name="FiringPoint" type="Marker2D" parent="RotationPoint"]
 unique_name_in_owner = true
-position = Vector2(25, 0)
+visible = false
 rotation = 1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="RotationPoint/FiringPoint"]
