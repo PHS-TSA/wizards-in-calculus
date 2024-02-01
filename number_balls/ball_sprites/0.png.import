@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4fshk1r108bt"
-path="res://.godot/imported/5-removebg-preview.png-2f7018a3f7957084a656f02f0a8a9f34.ctex"
+uid="uid://dbpog7b3oge5b"
+path="res://.godot/imported/0.png-c2b6d5c20d84d5c9203c21fb4889b905.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NumberBalls/Ball_Sprites/5-removebg-preview.png"
-dest_files=["res://.godot/imported/5-removebg-preview.png-2f7018a3f7957084a656f02f0a8a9f34.ctex"]
+source_file="res://number_balls/ball_sprites/0.png"
+dest_files=["res://.godot/imported/0.png-c2b6d5c20d84d5c9203c21fb4889b905.ctex"]
 
 [params]
 

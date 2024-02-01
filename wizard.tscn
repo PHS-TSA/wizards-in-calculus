@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqfj4dlx64q0r"]
 
 [ext_resource type="Script" path="res://wizard.gd" id="1_0rb7j"]
-[ext_resource type="Texture2D" uid="uid://wopx5xw4brq1" path="res://Sprites/cartoon-old-wizard-holding-stick-free-vector.jpg" id="1_bq1n1"]
-[ext_resource type="Script" path="res://RotationPoint.gd" id="3_sw5yd"]
+[ext_resource type="Texture2D" uid="uid://wopx5xw4brq1" path="res://sprites/wizard.jpg" id="1_bq1n1"]
+[ext_resource type="Script" path="res://rotation_point.gd" id="3_sw5yd"]
 [ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://icon.svg" id="4_iylg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oxhwx"]
