@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://eui6qcwl2wdl"]
+[gd_scene load_steps=6 format=3 uid="uid://eui6qcwl2wdl"]
 
 [ext_resource type="Texture2D" uid="uid://dkwdnmutxiy1h" path="res://Sprites/OverworldMap.png" id="1_bs77b"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_nnj8q"]
+[ext_resource type="PackedScene" uid="uid://df418yp3v7lrk" path="res://rock.tscn" id="3_ujku5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrkn6"]
 texture = ExtResource("1_bs77b")
@@ -81,3 +82,8 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_nnj8q")]
 position = Vector2(566, 511)
+
+[node name="Rock" parent="." instance=ExtResource("3_ujku5")]
+position = Vector2(853, 505)
+scale = Vector2(3.41411, 5.26295)
+collision_layer = 3
