@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -350.0 ## Jump height, kinda.
 @export var rampin = 5 ## How fast to go towards full speed.
 @export var floaty: float = 150 ## How far the whizard can jump.
-@export var feather: int = 20## How fast the wizard should stop after they stop jumping.
+@export var feather: int = 20## How fast the whizard should stop after they stop jumping.
 @export var friction: int = 25 ## Slow down, kid!
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
