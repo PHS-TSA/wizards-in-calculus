@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://df418yp3v7lrk"]
+
+[ext_resource type="Script" path="res://rock.gd" id="1_6wxje"]
+[ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://Sprites/Types-of-rocks-schist-0721-removebg-preview.png" id="1_43rcc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exjcn"]
+size = Vector2(44, 21)
+
+[node name="Rock" type="StaticBody2D"]
+script = ExtResource("1_6wxje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_exjcn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0855757, 0.0855757)
+texture = ExtResource("1_43rcc")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -70.1133
+offset_top = -70.1134
+offset_right = 82.8867
+offset_bottom = 69.8866
+theme_override_font_sizes/font_size = 100
+text = "4/4"
