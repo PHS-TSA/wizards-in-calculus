@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://df418yp3v7lrk"]
 
 [ext_resource type="Script" path="res://rock.gd" id="1_6wxje"]
-[ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://Sprites/Types-of-rocks-schist-0721-removebg-preview.png" id="1_43rcc"]
+[ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://sprites/rock.png" id="1_43rcc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exjcn"]
 size = Vector2(44, 21)

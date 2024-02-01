@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b11pcqkf5a26g"]
 
-[ext_resource type="Script" path="res://NumberBalls/NumberTwo.gd" id="1_m54ad"]
-[ext_resource type="Texture2D" uid="uid://dsfrnv85dmm48" path="res://NumberBalls/Ball_Sprites/2-removebg-preview.png" id="2_t2bwy"]
+[ext_resource type="Script" path="res://number_balls/number_two.gd" id="1_m54ad"]
+[ext_resource type="Texture2D" uid="uid://dsfrnv85dmm48" path="res://number_balls/ball_sprites/2.png" id="2_t2bwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sd8cv"]
 radius = 7.70167

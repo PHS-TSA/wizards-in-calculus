@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wopx5xw4brq1"
-path="res://.godot/imported/cartoon-old-wizard-holding-stick-free-vector.jpg-f441384391104dcd68c7eb2022c0bf0f.ctex"
+path="res://.godot/imported/wizard.jpg-0c0d4e79bfa46a49eea313ab90a38937.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cartoon-old-wizard-holding-stick-free-vector.jpg"
-dest_files=["res://.godot/imported/cartoon-old-wizard-holding-stick-free-vector.jpg-f441384391104dcd68c7eb2022c0bf0f.ctex"]
+source_file="res://sprites/wizard.jpg"
+dest_files=["res://.godot/imported/wizard.jpg-0c0d4e79bfa46a49eea313ab90a38937.ctex"]
 
 [params]
 

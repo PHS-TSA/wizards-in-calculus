@@ -15,13 +15,13 @@ func _process(_delta):
 func shoot(num):
 	match num: # switch case
 		1:
-			const NUMBERONE = preload("res://NumberBalls/NumberOne.tscn")
+			const NUMBERONE = preload("res://number_balls/number_one.tscn")
 			var new_numberOne = NUMBERONE.instantiate()
 			new_numberOne.position = %FiringPoint.position
 			new_numberOne.rotation = rotation
 			add_sibling(new_numberOne)
 		2:
-			const NUMBERTWO = preload("res://NumberBalls/NumberTwo.tscn")
+			const NUMBERTWO = preload("res://number_balls/number_two.tscn")
 			var new_numberTwo = NUMBERTWO.instantiate()
 			new_numberTwo.position = %FiringPoint.position
 			new_numberTwo.rotation = rotation
