@@ -26,7 +26,6 @@ func _process(_delta: float) -> void:
 		fire(8)
 	elif Input.is_action_just_pressed("nine"):
 		fire(9)
-		
 
 
 func fire(num: int) -> void:

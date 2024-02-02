@@ -42,10 +42,9 @@ func _physics_process(delta: float):
 	if Input.is_action_just_released("jump") and not is_on_floor() and not velocity.y > 0:
 		velocity.y = move_toward(velocity.y, 0, feather + (abs(velocity.y / 2)))
 
-
 	if is_on_floor():
 		walls = maxwalls
-		
+
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		# This basically just speeds up by rampin.
