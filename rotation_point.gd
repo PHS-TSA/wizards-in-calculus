@@ -19,15 +19,15 @@ func shoot(num):
 	match num:  # switch case
 		1:
 			const NUMBERONE = preload("res://number_balls/number_one.tscn")
-			var new_numberOne = NUMBERONE.instantiate()
-			new_numberOne.position = %FiringPoint.position
-			new_numberOne.rotation = rotation
-			add_sibling(new_numberOne)
+			var new_number_one = NUMBERONE.instantiate()
+			new_number_one.position = %FiringPoint.position
+			new_number_one.rotation = rotation
+			add_sibling(new_number_one)
 		2:
 			const NUMBERTWO = preload("res://number_balls/number_two.tscn")
-			var new_numberTwo = NUMBERTWO.instantiate()
-			new_numberTwo.position = %FiringPoint.position
-			new_numberTwo.rotation = rotation
-			add_sibling(new_numberTwo)
+			var new_number_two = NUMBERTWO.instantiate()
+			new_number_two.position = %FiringPoint.position
+			new_number_two.rotation = rotation
+			add_sibling(new_number_two)
 		_:
 			pass
