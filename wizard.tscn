@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqfj4dlx64q0r"]
+[gd_scene load_steps=7 format=3 uid="uid://bqfj4dlx64q0r"]
 
 [ext_resource type="Script" path="res://wizard.gd" id="1_0rb7j"]
 [ext_resource type="Texture2D" uid="uid://wopx5xw4brq1" path="res://sprites/wizard.jpg" id="1_bq1n1"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8a1iq"]
 radius = 1025.44
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dd8k"]
+size = Vector2(28, 46)
 
 [node name="Wizard" type="CharacterBody2D"]
 script = ExtResource("1_0rb7j")
@@ -39,3 +42,6 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="RotationPoint/FiringPoint"]
 scale = Vector2(0.076448, 0.076448)
 texture = ExtResource("4_iylg7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7dd8k")
