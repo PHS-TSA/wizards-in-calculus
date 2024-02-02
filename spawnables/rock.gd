@@ -3,9 +3,11 @@ extends StaticBody2D
 @export var answer: int
 @export var question: String = "N/A"
 
+@onready var label := %RockLabel
+
 
 func _ready():
-	get_node("Sprite2D/Label").text = question
+	label.question = question
 
 
 func take_damage(value: int) -> void:

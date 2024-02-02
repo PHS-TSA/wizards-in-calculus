@@ -1,20 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://df418yp3v7lrk"]
+[gd_scene load_steps=4 format=3 uid="uid://dxtj2socpdo5p"]
 
 [ext_resource type="Script" path="res://Spawnables/rock.gd" id="1_6wxje"]
-[ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://sprites/rock.png" id="1_43rcc"]
-
-[sub_resource type="GDScript" id="GDScript_m23a2"]
-script/source = "extends Sprite2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Label.text = get_parent().question # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
+[ext_resource type="PackedScene" uid="uid://dshq3jerga63l" path="res://spawnables/rock_label.tscn" id="2_4up61"]
+[ext_resource type="Script" path="res://spawnables/rock_label.gd" id="3_yp8vt"]
 
 [node name="Rock" type="StaticBody2D"]
 collision_layer = 3
@@ -24,15 +12,8 @@ script = ExtResource("1_6wxje")
 position = Vector2(0, -0.5)
 polygon = PackedVector2Array(-10, -7.5, -13, -7.5, -19, -2.5, -22, 1.5, -22, 3.5, -21, 5.5, -19, 7.5, -17, 8.5, -15, 9.5, -12, 11.5, -6, 11.5, 0, 10.5, 5, 10.5, 9, 11.5, 13, 10.5, 17, 9.5, 20, 3.5, 22, 0.5, 22, -1.5, 19, -3.5, 18, -5.5, 9, -9.5, -5, -8.5, -7, -9.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0855757, 0.0855757)
-texture = ExtResource("1_43rcc")
-script = SubResource("GDScript_m23a2")
+[node name="RockLabel" parent="." instance=ExtResource("2_4up61")]
+unique_name_in_owner = true
+script = ExtResource("3_yp8vt")
 
-[node name="Label" type="Label" parent="Sprite2D"]
-offset_left = -116.856
-offset_top = -70.1133
-offset_right = 124.144
-offset_bottom = 69.8867
-theme_override_font_sizes/font_size = 100
-text = "PLAY"
+[editable path="RockLabel"]
