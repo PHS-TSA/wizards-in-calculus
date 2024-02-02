@@ -2,11 +2,11 @@ extends Area2D
 
 var travelled_distance = 0
 
-var num = 2
+const num = 2
 
 
 ## Called when the node enters the scene tree for the first time.
-func _physics_process(delta):
+func _physics_process(delta: float):
 	const SPEED = 1000
 	const RANGE = 1200
 
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		queue_free()
 
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node) -> void:
 	queue_free()
 	if body.has_method("take_damage"):
 		body.take_damage(num)
