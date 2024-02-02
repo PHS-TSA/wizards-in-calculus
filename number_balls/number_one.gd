@@ -14,7 +14,6 @@ func _physics_process(delta: float):
 		$Sprite2D.flip_h = true
 	position += direction * SPEED * delta
 	travelled_distance += SPEED * delta
-	#get_node("Sprite2D/Label").text = str(num)
 	if travelled_distance > RANGE:
 		queue_free()
 
