@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const MAX_WALLS := 3
+
 ## You can guess.
 @export var speed: int = 200
 
@@ -21,10 +23,9 @@ extends CharacterBody2D
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var wizard_sprite := %WizardSprite
+var walls := MAX_WALLS
 
-const maxwalls := 3
-var walls := maxwalls
+@onready var wizard_sprite := %WizardSprite
 
 
 func _physics_process(delta: float) -> void:
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, feather + (abs(velocity.y / 2)))
 
 	if is_on_floor():
-		walls = maxwalls
+		walls = MAX_WALLS
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
