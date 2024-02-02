@@ -6,10 +6,15 @@ const num = 2
 
 
 func _physics_process(delta: float):
-	const SPEED = 1000
+	const SPEED = 300
 	const RANGE = 1200
 
 	var direction = Vector2.RIGHT.rotated(rotation)
+	
+	if direction.x < 0:
+		$Sprite2D.flip_v = true
+		$Sprite2D.flip_h = true
+	
 	position += direction * SPEED * delta
 
 	travelled_distance += SPEED * delta

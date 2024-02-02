@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var jump_velocity: float = -350.0
 
 ## How fast to go towards full speed.
-@export var rampin: int = 5
+@export var rampin: int = 20
 
 ## How far the whizard can jump.
 @export var floaty: float = 150
@@ -23,6 +23,9 @@ var gravity: Variant = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var wizard_sprite := %WizardSprite
 
+var maxwalls = 3
+var walls = maxwalls
+
 
 func _physics_process(delta: float):
 	# Add the gravity.
@@ -32,10 +35,17 @@ func _physics_process(delta: float):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-
+	if Input.is_action_just_pressed("jump") and is_on_wall_only() and walls > 0:
+		velocity.y = jump_velocity
+		velocity.x = -400 if wizard_sprite.flip_h else 400
+		walls -= 1
 	if Input.is_action_just_released("jump") and not is_on_floor() and not velocity.y > 0:
 		velocity.y = move_toward(velocity.y, 0, feather + (abs(velocity.y / 2)))
 
+
+	if is_on_floor():
+		walls = maxwalls
+		
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		# This basically just speeds up by rampin.
