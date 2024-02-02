@@ -1,19 +1,22 @@
 extends Marker2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass  # Replace with function body.
+
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	look_at(get_global_mouse_position())
-	if(Input.is_action_just_pressed("one")):
+	if Input.is_action_just_pressed("one"):
 		shoot(1)
-	elif(Input.is_action_just_pressed("two")):
+	elif Input.is_action_just_pressed("two"):
 		shoot(2)
 
+
 func shoot(num):
-	match num: # switch case
+	match num:  # switch case
 		1:
 			const NUMBERONE = preload("res://number_balls/number_one.tscn")
 			var new_numberOne = NUMBERONE.instantiate()
