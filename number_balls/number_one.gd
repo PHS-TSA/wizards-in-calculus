@@ -5,7 +5,6 @@ var travelled_distance = 0
 const num = 1
 
 
-## Called when the node enters the scene tree for the first time.
 func _physics_process(delta: float):
 	const SPEED = 1000
 	const RANGE = 1200
