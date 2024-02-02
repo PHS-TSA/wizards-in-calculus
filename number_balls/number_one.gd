@@ -1,17 +1,18 @@
 extends Area2D
 
-var travelled_distance = 0
-var num
+var travelled_distance := 0.0
+var num: int
 
 
-func _physics_process(delta: float):
-	const SPEED = 300
-	const RANGE = 1200
-	var direction = Vector2.RIGHT.rotated(rotation)
-	get_node("Sprite2D").texture = load("res://number_balls/ball_sprites/" + str(num) + ".png")
+func _physics_process(delta: float) -> void:
+	const SPEED := 300
+	const RANGE := 1200
+	var direction := Vector2.RIGHT.rotated(rotation)
+	var ball = $Sprite2D
+	ball.texture = load("res://number_balls/ball_sprites/" + str(num) + ".png")
 	if direction.x < 0:
-		$Sprite2D.flip_v = true
-		$Sprite2D.flip_h = true
+		ball.flip_v = true
+		ball.flip_h = true
 	position += direction * SPEED * delta
 	travelled_distance += SPEED * delta
 	if travelled_distance > RANGE:

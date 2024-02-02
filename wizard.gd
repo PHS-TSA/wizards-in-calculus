@@ -19,15 +19,15 @@ extends CharacterBody2D
 @export var friction: int = 25
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity: Variant = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var wizard_sprite := %WizardSprite
 
-var maxwalls = 3
-var walls = maxwalls
+const maxwalls := 3
+var walls := maxwalls
 
 
-func _physics_process(delta: float):
+func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * (delta / (floaty / 100))
