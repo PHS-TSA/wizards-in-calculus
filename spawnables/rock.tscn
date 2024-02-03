@@ -28,8 +28,7 @@ offset_top = -70.1133
 offset_right = 124.144
 offset_bottom = 69.8867
 theme_override_font_sizes/font_size = 100
-text = "PLAY
-PLAY"
+text = "PLAY"
 label_settings = SubResource("LabelSettings_sbncs")
 horizontal_alignment = 1
 vertical_alignment = 1
