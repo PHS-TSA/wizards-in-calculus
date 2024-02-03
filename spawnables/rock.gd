@@ -21,7 +21,7 @@ func take_damage(value: int) -> void:
 			"Score: %s" % (get_parent().get_node("CharacterBody2D").score)
 		)
 	else:
-		get_parent().get_node("CharacterBody2D").jucies -= 1
+		get_parent().get_node("CharacterBody2D").juices -= 1
 		get_parent().get_node("CharacterBody2D").get_node("Camera2D/Juice").text = (
-			"Jucies: %s" % (get_parent().get_node("CharacterBody2D").jucies)
+			"Juices: %s" % (get_parent().get_node("CharacterBody2D").juices)
 		)

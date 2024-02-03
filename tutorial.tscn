@@ -100,7 +100,7 @@ offset_right = 2148.0
 offset_bottom = 322.0
 text = "Getting an anwser wrong takes a juice!
 Running out of juices ends the game!
-Getting score increases jucies."
+Getting score increases juices."
 
 [node name="Label7" type="Label" parent="."]
 offset_left = 2285.0

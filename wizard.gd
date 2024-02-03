@@ -20,7 +20,7 @@ const MAX_WALLS := 3
 ## Slow down, kid!
 @export var friction: int = 25
 
-@export var startjucies: int = 20
+@export var startjuices: int = 20
 
 var score := 0
 var times := 1.0
@@ -30,9 +30,9 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var walls := MAX_WALLS
 
-@onready var jucies := startjucies
+@onready var juices := startjuices
 @onready var wizard_sprite: Sprite2D = %WizardSprite
-@onready var juciesText = $Camera2D/Juice
+@onready var juicesText = $Camera2D/Juice
 
 
 func _physics_process(delta: float) -> void:
@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	## Game Over!!
 	if score >= 100 * times:
 		times += 0.5
-		jucies += 1
-		juciesText.text = "Jucies: %s" % jucies
-	if jucies <= 0:
+		juices += 1
+		juicesText.text = "Juices: %s" % juices
+	if juices <= 0:
 		get_tree().change_scene_to_file("res://game_over/game_over.tscn")
