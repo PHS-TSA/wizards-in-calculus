@@ -11,4 +11,4 @@ func _ready():
 
 func _pressed():
 	print("Start")
-	get_tree().change_scene_to_file("res://Tutorial.tscn")
+	get_tree().change_scene_to_file("res://1.tscn")

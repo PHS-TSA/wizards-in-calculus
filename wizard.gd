@@ -73,5 +73,5 @@ func _physics_process(delta: float) -> void:
 		jucies += 1
 		get_node("Camera2D/Juice").text = "Jucies: "+str(jucies)
 	if jucies <= 0:
-		get_tree().change_scene_to_file("res://GameOver/GameOver.tscn")
+		get_tree().change_scene_to_file("res://game_over/game_over.tscn")
 

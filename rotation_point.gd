@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 
 
 func fire(num: int) -> void:
-	const WOWZA := preload("res://number_balls/Number.tscn")
+	const WOWZA := preload("res://number_balls/number.tscn")
 	var new_numbers := WOWZA.instantiate()
 	new_numbers.position = firing_point.global_position
 	new_numbers.rotation = rotation
