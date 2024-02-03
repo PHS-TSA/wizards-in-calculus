@@ -7,7 +7,7 @@ extends StaticBody2D
 @onready var label := %RockLabel
 
 
-func _ready():
+func _ready() -> void:
 	label.question = question
 
 

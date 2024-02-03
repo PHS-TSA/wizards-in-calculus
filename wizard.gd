@@ -23,7 +23,7 @@ const MAX_WALLS := 3
 @export var startjucies: int = 20
 
 var score := 0
-var times := 1
+var times := 1.0
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")

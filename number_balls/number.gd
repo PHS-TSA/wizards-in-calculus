@@ -3,7 +3,7 @@ extends Area2D
 var travelled_distance := 0.0
 var num: int
 
-@onready var ball = %BallSprite
+@onready var ball := %BallSprite
 
 
 func _physics_process(delta: float) -> void:
