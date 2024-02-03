@@ -31,7 +31,7 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var walls := MAX_WALLS
 
 @onready var jucies := startjucies
-@onready var wizard_sprite := %WizardSprite
+@onready var wizard_sprite: Sprite2D = %WizardSprite
 @onready var juciesText = $Camera2D/Juice
 
 

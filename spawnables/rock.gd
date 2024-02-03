@@ -4,7 +4,7 @@ extends StaticBody2D
 @export var question: String = "N/A"
 @export var diffculty: int = 1
 
-@onready var label := %RockSprite
+@onready var label: Sprite2D = %RockSprite
 
 
 func _ready() -> void:

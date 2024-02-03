@@ -1,6 +1,6 @@
 extends Marker2D
 
-@onready var firing_point := %FiringPoint
+@onready var firing_point: Marker2D = %FiringPoint
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.

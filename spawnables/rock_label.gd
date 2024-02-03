@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var question: String
 
-@onready var label := %Label
+@onready var label: Label = %Label
 
 
 # Called when the node enters the scene tree for the first time.
