@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	const RANGE := 1200
 	var direction := Vector2.RIGHT.rotated(rotation)
 	var ball = $Sprite2D
-	ball.texture = load("res://number_balls/ball_sprites/" + str(num) + ".png")
+	ball.texture = load("res://number_balls/ball_sprites/%s.png" % num)
 	if direction.x < 0:
 		ball.flip_v = true
 		ball.flip_h = true
