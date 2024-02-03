@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const MAX_WALLS := 3
-
 ## You can guess.
 @export var speed: int = 200
 
@@ -20,15 +18,22 @@ const MAX_WALLS := 3
 ## Slow down, kid!
 @export var friction: int = 25
 
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var startjucies: int = 20
+@onready var jucies = startjucies
 
-var walls := MAX_WALLS
+var score = 0
+var times = 1
+
+## Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity: Variant = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var wizard_sprite := %WizardSprite
 
+var maxwalls = 3
+var walls = maxwalls
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(delta: float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * (delta / (floaty / 100))
@@ -44,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, feather + (abs(velocity.y / 2)))
 
 	if is_on_floor():
-		walls = MAX_WALLS
+		walls = maxwalls
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -58,5 +63,14 @@ func _physics_process(delta: float) -> void:
 			wizard_sprite.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, friction)  # slow down with friction
-
+	
 	move_and_slide()
+	
+	## Game Over!!
+	if score >= 100 * times:
+		times += 0.5
+		jucies += 1
+		get_node("Camera2D/Juice").text = "Jucies: "+str(jucies)
+	if jucies <= 0:
+		get_tree().change_scene_to_file("res://GameOver/GameOver.tscn")
+	

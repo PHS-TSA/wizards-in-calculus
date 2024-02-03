@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hiclokv8sham"]
+
+[ext_resource type="Script" path="res://number_balls/old/number_one.gd" id="1_j6x8m"]
+[ext_resource type="Texture2D" uid="uid://dgdt3twjqao7b" path="res://number_balls/ball_sprites/1.png" id="2_7flpw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sd8cv"]
+radius = 9.82594
+
+[node name="Number" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_j6x8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.4248, 1.40244)
+shape = SubResource("CircleShape2D_sd8cv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_7flpw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
