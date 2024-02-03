@@ -21,16 +21,16 @@ const MAX_WALLS := 3
 @export var friction: int = 25
 
 @export var startjucies: int = 20
-@onready var jucies = startjucies
 
-var score = 0
-var times = 1
+var score := 0
+var times := 1
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var walls := MAX_WALLS
 
+@onready var jucies := startjucies
 @onready var wizard_sprite := %WizardSprite
 
 
@@ -71,7 +71,6 @@ func _physics_process(delta: float) -> void:
 	if score >= 100 * times:
 		times += 0.5
 		jucies += 1
-		get_node("Camera2D/Juice").text = "Jucies: "+str(jucies)
+		get_node("Camera2D/Juice").text = "Jucies: " + str(jucies)
 	if jucies <= 0:
 		get_tree().change_scene_to_file("res://game_over/game_over.tscn")
-
