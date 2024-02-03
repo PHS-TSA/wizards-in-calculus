@@ -93,3 +93,4 @@ question = "4/1"
 position = Vector2(651, 548)
 answer = 2
 question = "√4"
+diffculty = 99
