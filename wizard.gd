@@ -32,6 +32,7 @@ var walls := MAX_WALLS
 
 @onready var jucies := startjucies
 @onready var wizard_sprite := %WizardSprite
+@onready var juciesText = $Camera2D/Juice
 
 
 func _physics_process(delta: float) -> void:
@@ -71,6 +72,6 @@ func _physics_process(delta: float) -> void:
 	if score >= 100 * times:
 		times += 0.5
 		jucies += 1
-		get_node("Camera2D/Juice").text = "Jucies: " + str(jucies)
+		juciesText.text = "Jucies: %s" % jucies
 	if jucies <= 0:
 		get_tree().change_scene_to_file("res://game_over/game_over.tscn")
