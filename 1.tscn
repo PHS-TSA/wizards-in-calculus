@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dkwdnmutxiy1h" path="res://sprites/overworld_map.png" id="1_chc7o"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_jk3qu"]
-[ext_resource type="PackedScene" uid="uid://df418yp3v7lrk" path="res://spawnables/rock.tscn" id="3_ay7so"]
-[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/AMJ.tscn" id="5_dhd8p"]
+[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="3_ay7so"]
+[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_dhd8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrkn6"]
 texture = ExtResource("1_chc7o")

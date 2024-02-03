@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxw6ee0kfg0yk"]
 
-[ext_resource type="Script" path="res://spawnables/AMJ.gd" id="1_boubq"]
+[ext_resource type="Script" path="res://spawnables/amj.gd" id="1_boubq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7dgc"]
 

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dkwdnmutxiy1h" path="res://sprites/overworld_map.png" id="1_iamjf"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_15ipo"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="3_l6cja"]
-[ext_resource type="PackedScene" uid="uid://df418yp3v7lrk" path="res://spawnables/rock.tscn" id="4_ykho3"]
-[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/AMJ.tscn" id="5_s2hii"]
+[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="4_ykho3"]
+[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_s2hii"]
 [ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://spawnables/checkpoint.tscn" id="6_xhlov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrkn6"]
