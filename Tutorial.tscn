@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcs4vafeyasn8"]
+[gd_scene load_steps=13 format=3 uid="uid://bcs4vafeyasn8"]
 
 [ext_resource type="Texture2D" uid="uid://dkwdnmutxiy1h" path="res://sprites/overworld_map.png" id="1_at853"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_gvfjw"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://Menu/Font.otf" id="3_l5147"]
 [ext_resource type="PackedScene" uid="uid://df418yp3v7lrk" path="res://Spawnables/rock.tscn" id="3_otly5"]
+[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://Spawnables/AMJ.tscn" id="5_76m1h"]
+[ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://Spawnables/Checkpoint.tscn" id="6_newtr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrkn6"]
 texture = ExtResource("1_at853")
@@ -58,6 +60,9 @@ sources/0 = SubResource("TileSetAtlasSource_s313w")
 [sub_resource type="LabelSettings" id="LabelSettings_3o51e"]
 font = ExtResource("3_l5147")
 font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_l7yo4"]
+font_size = 8
 
 [node name="Main" type="Node2D"]
 
@@ -167,6 +172,15 @@ text = "Watch out!
 Anti-Math Juice takes 5 juices!"
 horizontal_alignment = 1
 
+[node name="Label11" type="Label" parent="."]
+offset_left = 2974.0
+offset_top = 354.0
+offset_right = 3204.0
+offset_bottom = 403.0
+text = "Checkpoint"
+label_settings = SubResource("LabelSettings_l7yo4")
+horizontal_alignment = 1
+
 [node name="Rock2" parent="." instance=ExtResource("3_otly5")]
 position = Vector2(3404, 293)
 rotation = -0.760964
@@ -174,3 +188,17 @@ scale = Vector2(6, 8)
 answer = 2
 question = "4-2"
 diffculty = 0
+
+[node name="Area2D" parent="." instance=ExtResource("5_76m1h")]
+position = Vector2(2999, 417)
+scale = Vector2(2.5, 1)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_76m1h")]
+position = Vector2(3200, 417)
+scale = Vector2(5, 1)
+
+[node name="Spawn" type="Area2D" parent="."]
+position = Vector2(559, 504)
+
+[node name="Check" parent="." instance=ExtResource("6_newtr")]
+position = Vector2(3087, 390)

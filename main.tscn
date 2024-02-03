@@ -64,7 +64,7 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_jk3qu")]
 unique_name_in_owner = true
-position = Vector2(574, 504)
+position = Vector2(574, 536)
 
 [node name="Rock" parent="." instance=ExtResource("3_ay7so")]
 position = Vector2(851, 503)
@@ -83,3 +83,6 @@ position = Vector2(651, 548)
 answer = 2
 question = "√4"
 diffculty = 99
+
+[node name="Spawn" type="Area2D" parent="."]
+position = Vector2(576, 535)
