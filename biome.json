@@ -1,0 +1,35 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.5.0/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "formatWithErrors": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "all": true,
+      "nursery": {
+        "all": true
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
+      }
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "useIgnoreFile": true,
+    "clientKind": "git",
+    "defaultBranch": "main"
+  },
+  "files": {
+    "include": ["server/**/*.ts"]
+  },
+  "javascript": {
+    "globals": ["Deno"]
+  }
+}

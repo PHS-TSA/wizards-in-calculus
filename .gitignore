@@ -12,3 +12,14 @@ export.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Test coverage
+cov/
+cov.lcov
