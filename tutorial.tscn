@@ -62,18 +62,18 @@ to move"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 1298.0
+offset_left = 1315.0
 offset_top = 367.0
-offset_right = 1403.0
+offset_right = 1420.0
 offset_bottom = 416.0
 text = "Oh no!
 A rock!"
 
 [node name="Label5" type="Label" parent="."]
 offset_left = 1400.0
-offset_top = 251.0
+offset_top = 255.0
 offset_right = 1571.0
-offset_bottom = 326.0
+offset_bottom = 330.0
 text = "Aim the mouse
 and press the number
 key to solve it!"
@@ -108,14 +108,14 @@ offset_left = 2285.0
 offset_top = 377.0
 offset_right = 2395.0
 offset_bottom = 400.0
-text = "Space to jump"
+text = "Press space to jump."
 
 [node name="Label8" type="Label" parent="."]
 offset_left = 2617.0
 offset_top = 295.0
 offset_right = 2818.0
 offset_bottom = 318.0
-text = "hold space to jump higher"
+text = "Hold space to jump higher."
 
 [node name="Label9" type="Label" parent="."]
 offset_left = 2989.0
