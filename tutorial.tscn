@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://eui6qcwl2wdl"]
+[gd_scene load_steps=10 format=3 uid="uid://bimm0sh6fgcge"]
 
-[ext_resource type="TileSet" uid="uid://c4ymcrgbfuloe" path="res://sprites/tiles.tres" id="1_ixvwr"]
+[ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://sprites/tiles.tres" id="1_ixvwr"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_gvfjw"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="3_l5147"]
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="3_otly5"]
-[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_76m1h"]
-[ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://spawnables/checkpoint.tscn" id="6_newtr"]
-[ext_resource type="PackedScene" uid="uid://d1yixuomm2gqq" path="res://spawnables/portal.tscn" id="7_cw3s8"]
+[ext_resource type="PackedScene" path="res://spawnables/amj.tscn" id="5_76m1h"]
+[ext_resource type="PackedScene" path="res://spawnables/checkpoint.tscn" id="6_newtr"]
+[ext_resource type="PackedScene" uid="uid://bkxaf8d4e86ux" path="res://spawnables/portal.tscn" id="7_cw3s8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3o51e"]
 font = ExtResource("3_l5147")
