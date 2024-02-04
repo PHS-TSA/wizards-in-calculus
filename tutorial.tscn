@@ -159,3 +159,6 @@ position = Vector2(3087, 390)
 
 [node name="Area2D3" parent="." instance=ExtResource("7_cw3s8")]
 position = Vector2(3562, 229)
+
+[node name="Area2D4" parent="." instance=ExtResource("7_cw3s8")]
+position = Vector2(585, 100)
