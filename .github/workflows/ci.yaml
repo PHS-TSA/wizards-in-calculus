@@ -1,0 +1,135 @@
+---
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  merge_group:
+  schedule:
+    - cron: "0 14 * * 1" # Every Monday at 9 A.M. CST.
+  workflow_dispatch:
+
+env:
+  CI: true
+  GODOT_VERSION: "4.2.1"
+  GDTOOLKIT_VERSION: "4.2.2"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build
+    needs: []
+    timeout-minutes: ${{ (matrix.target == 'web') && 5 || 10 }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - web
+          # - macos
+        include:
+          - target: web
+            os: ubuntu-latest
+            godot-flags: --export-release "Web" build/index.html
+          # - target: macos
+          #   os: macos-latest
+          #   godot-flags: --export-release "OS X"
+
+    steps:
+      - name: 📚 Git checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: recursive
+          clean: true
+          persist-credentials: false
+          set-safe-directory: true
+      - name: 🤖 Set up Godot
+        uses: chickensoft-games/setup-godot@d3fbddfbafb76fbce64d878aa3d31090e5d0fe0c # v1.5.6
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+      - name: 🔬 Verify setup
+        run: godot --version
+      - name: 🔌 Make and delete directories
+        run: mkdir build/ && rm -rf addons/{godot-git-plugin,wakatime}
+      - name: 🔧 Build
+        run: godot --headless ${{ matrix.godot-flags }}
+      - name: ⚙️ Upload build
+        if: matrix.target == 'web'
+        uses: actions/upload-pages-artifact@0252fc4ba7626f0298f0cf00902a25c6afc77fa8 # v3.0.0
+        with:
+          name: build-${{ matrix.target }}
+          path: "./build"
+
+  lint:
+    name: Linting
+    needs: []
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: recursive
+          clean: true
+          persist-credentials: false
+          set-safe-directory: true
+      - name: 🤖 Set up Godot
+        uses: Scony/godot-gdscript-toolkit@cbd7a1dcff14cd272787a4ca497c7ff328714a6c # master
+        with:
+          version: ${{ env.GDTOOLKIT_VERSION }}
+      - name: 🔬 Verify setup
+        run: gdparse --version
+      - name: 🕵️ Analyze project source
+        run: gdlint .
+
+  format:
+    name: Formatting
+    needs: []
+    timeout-minutes: 3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📚 Git checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          submodules: recursive
+          clean: true
+          persist-credentials: false
+          set-safe-directory: true
+      - name: 🤖 Set up Godot
+        uses: Scony/godot-gdscript-toolkit@cbd7a1dcff14cd272787a4ca497c7ff328714a6c # master
+        with:
+          version: ${{ env.GDTOOLKIT_VERSION }}
+      - name: 🔬 Verify setup
+        run: gdparse --version
+      - name: ✨ Verify formatting
+        run: gdformat --check $(find . -name '*.gd' -not -path "./addons/*")
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: [build]
+    if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    concurrency:
+      group: "pages"
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 🔧 Deploy
+        id: deployment
+        uses: actions/deploy-pages@87c3283f01cd6fe19a0ab93a23b2f6fcba5a8e42 # v4.0.3
