@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bve1ycnoxavc8"]
+
+[ext_resource type="Script" path="res://spawnables/checkpoint.gd" id="1_0pku0"]
+[ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://icon.svg" id="1_052k8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oj5sh"]
+size = Vector2(20, 35)
+
+[node name="Check" type="Area2D"]
+script = ExtResource("1_0pku0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.7486e-07, -7.5)
+scale = Vector2(0.15625, 0.273438)
+texture = ExtResource("1_052k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.68434e-14, -7.5)
+shape = SubResource("RectangleShape2D_oj5sh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

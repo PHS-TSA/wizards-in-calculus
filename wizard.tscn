@@ -1,22 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqfj4dlx64q0r"]
+[gd_scene load_steps=6 format=3 uid="uid://bqfj4dlx64q0r"]
 
 [ext_resource type="Script" path="res://wizard.gd" id="1_0rb7j"]
-[ext_resource type="Texture2D" path="res://sprites/wizard.png" id="2_nqjmu"]
+[ext_resource type="Texture2D" uid="uid://cequfnyxmgqtu" path="res://sprites/wizard.png" id="2_nqjmu"]
 [ext_resource type="Script" path="res://rotation_point.gd" id="3_sw5yd"]
 [ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://icon.svg" id="4_iylg7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8a1iq"]
 radius = 1025.44
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dd8k"]
-size = Vector2(28, 46)
-
 [node name="Wizard" type="CharacterBody2D"]
 script = ExtResource("1_0rb7j")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.95, 0.95)
-polygon = PackedVector2Array(-7, -14, 2, -24, 5, -25, 7, -24, 11, -18, 12, -17, 14, -18, 15, -17, 13, -15, 10, -15, 8, -16, 9, -10, 8, -10, 10, -8, 10, -6, 9, -4, 5, -3, 5, -2, 7, 0, 9, -1, 10, -5, 12, -9, 15, -7, 15, -4, 12, -3, 11, -2, 12, -1, 13, 1, 12, 2, 12, 5, 12, 7, 11, 9, 11, 12, 11, 16, 11, 21, 9, 22, 9, 11, 10, 8, 10, 2, 9, 4, 9, 9, 8, 11, 4, 6, 4, 12, 6, 19, 8, 22, 5, 22, 4, 23, 4, 24, 0, 24, 0, 22, -3, 21, -3, 23, -9, 24, -10, 22, -11, 20, -9, 18, -8, 14, -8, 9, -8, 8, -10, 10, -11, 8, -11, 3, -11, 2, -14, 1, -15, -2, -13, -4, -12, -2, -11, -3, -10, -1, -9, 0, -7, -1, -6, -2, -6, -3, -8, -4, -9, -5, -11, -9)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, 23, -8, 23, -10, 20, -14, -1, -8, -13, 5, -24, 14, -17, 14, -5, 10, 20)
 
 [node name="WizardSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -24,7 +20,39 @@ scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_nqjmu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
+
+[node name="Juice" type="Label" parent="Camera2D"]
+z_index = 999
+offset_left = -316.0
+offset_top = -197.0
+offset_right = -244.0
+offset_bottom = -148.0
+text = "Juices: 20
+
+"
+
+[node name="Score" type="Label" parent="Camera2D"]
+z_index = 999
+offset_left = -31.0
+offset_top = -199.0
+offset_right = 315.0
+offset_bottom = -176.0
+text = "Score: 0
+"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="Camera2D"]
+offset_left = -324.0
+offset_top = -205.0
+offset_right = -223.0
+offset_bottom = -169.0
+
+[node name="Button2" type="Button" parent="Camera2D"]
+offset_left = 209.0
+offset_top = -206.0
+offset_right = 327.0
+offset_bottom = -170.0
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -43,6 +71,3 @@ rotation = 1.5708
 [node name="Sprite2D" type="Sprite2D" parent="RotationPoint/FiringPoint"]
 scale = Vector2(0.076448, 0.076448)
 texture = ExtResource("4_iylg7")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7dd8k")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxw6ee0kfg0yk"]
+
+[ext_resource type="Script" path="res://spawnables/amj.gd" id="1_boubq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7dgc"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_boubq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u7dgc")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

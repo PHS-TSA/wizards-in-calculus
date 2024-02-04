@@ -1,9 +1,9 @@
 extends Marker2D
 
-@onready var firing_point := %FiringPoint
+@onready var firing_point: Marker2D = %FiringPoint
 
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_just_pressed("zero"):
@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 
 
 func fire(num: int) -> void:
-	const WOWZA := preload("res://number_balls/Number.tscn")
+	const WOWZA := preload("res://number_balls/number.tscn")
 	var new_numbers := WOWZA.instantiate()
 	new_numbers.position = firing_point.global_position
 	new_numbers.rotation = rotation

@@ -3,7 +3,7 @@ extends Area2D
 var travelled_distance := 0.0
 var num: int
 
-@onready var ball = %BallSprite
+@onready var ball: Sprite2D = %BallSprite
 
 
 func _physics_process(delta: float) -> void:
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	if body.has_method("take_damage"):
 		body.take_damage(num)
