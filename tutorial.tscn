@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_gvfjw"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="3_l5147"]
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="3_otly5"]
-[ext_resource type="PackedScene" path="res://spawnables/amj.tscn" id="5_76m1h"]
-[ext_resource type="PackedScene" path="res://spawnables/checkpoint.tscn" id="6_newtr"]
+[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_76m1h"]
+[ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://spawnables/checkpoint.tscn" id="6_newtr"]
 [ext_resource type="PackedScene" uid="uid://bkxaf8d4e86ux" path="res://spawnables/portal.tscn" id="7_cw3s8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3o51e"]
