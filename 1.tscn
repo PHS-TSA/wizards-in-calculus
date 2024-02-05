@@ -64,7 +64,7 @@ offset_top = 368.0
 offset_right = 456.0
 offset_bottom = 391.0
 text = "Hold towards a wall and jump!
-You get 3 wall jumps each time you jump"
+Each time you jump while holding onto a wall, you'll get up to 3 wall jumps."
 label_settings = SubResource("LabelSettings_lff1f")
 horizontal_alignment = 1
 
