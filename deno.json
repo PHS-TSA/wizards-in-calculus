@@ -1,0 +1,54 @@
+{
+  "lock": true,
+  "tasks": {
+    "check": "deno task lint & deno task typecheck",
+    "lint": "deno lint & deno task biome:check",
+    "ci": "deno lint & deno task biome:ci & deno task typecheck",
+    "typecheck": "deno check server/**/*.ts",
+    "test": "deno test --allow-net --allow-read --allow-write --coverage=cov/",
+    "test:coverage": "deno coverage --lcov cov/ > cov/cov.lcov",
+    "test:coverage:genhtml": "genhtml -o cov/html cov/cov.lcov",
+    "start": "deno run --allow-net --allow-read --watch=server/ server/server.ts",
+    "preview": "deno run --allow-net --allow-read server/server.ts",
+    "cache": "deno cache server/server.ts",
+    "biome": "deno run -A npm:@biomejs/biome@1.5.2",
+    "biome:ci": "deno task biome ci . --error-on-warnings",
+    "biome:check": "deno task biome check . --error-on-warnings"
+  },
+  "imports": {
+    "$std/": "https://deno.land/std@0.212.0/"
+  },
+  "scopes": {},
+  "compilerOptions": {
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUnusedLocals": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true
+  },
+  "lint": {
+    "rules": {
+      "tags": ["fresh", "recommended"],
+      "include": [
+        "ban-untagged-todo",
+        "explicit-function-return-type",
+        "explicit-module-boundary-types",
+        "guard-for-in",
+        "no-await-in-loop",
+        "no-external-import",
+        "no-implicit-declare-namespace-export",
+        "no-non-null-asserted-optional-chain",
+        "no-sync-fn-in-async-fn",
+        "no-throw-literal"
+      ]
+    }
+  },
+  "exclude": ["build/**/*"]
+}

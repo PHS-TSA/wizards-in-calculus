@@ -1,4 +1,12 @@
 {
+  "deno.enablePaths": ["server/"],
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "cSpell.words": ["tscn"],
-  "cSpell.enableFiletypes": ["gdscript"]
+  "cSpell.enableFiletypes": ["gdscript"],
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "always",
+    "source.organizeImports.biome": "always"
+  }
 }

@@ -4,7 +4,6 @@
 # Godot-specific ignores
 .import/
 export.cfg
-export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -13,3 +12,14 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Test coverage
+cov/
+cov.lcov
