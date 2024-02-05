@@ -1,6 +1,5 @@
 import { assertEquals } from "$std/assert/assert_equals.ts";
 import { assertStringIncludes } from "$std/assert/assert_string_includes.ts";
-import { assertThrows } from "$std/assert/assert_throws.ts";
 import { join } from "$std/path/join.ts";
 import { respond } from "./server.ts";
 
@@ -65,13 +64,9 @@ Deno.test(
     await res.body?.cancel();
 
     assertEquals(res.status, 200);
-    assertThrows(() =>
-      assertStringIncludes(
-        res.headers.get("Content-Type") ?? "",
-        // Currently, the .pkg file isn't served with the correct content type.
-        // However, this isn't a big deal, so I'm ignoring the failure.
-        "application/octet-stream",
-      ),
+    assertStringIncludes(
+      res.headers.get("Content-Type") ?? "",
+      "application/octet-stream",
     );
   },
 );
