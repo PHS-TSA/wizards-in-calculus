@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqfj4dlx64q0r"]
+[gd_scene load_steps=7 format=3 uid="uid://bqfj4dlx64q0r"]
 
 [ext_resource type="Script" path="res://wizard.gd" id="1_0rb7j"]
 [ext_resource type="Texture2D" uid="uid://cequfnyxmgqtu" path="res://sprites/wizard.png" id="2_nqjmu"]
 [ext_resource type="Script" path="res://rotation_point.gd" id="3_sw5yd"]
 [ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://icon.svg" id="4_iylg7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t0s46"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8a1iq"]
 radius = 1025.44
@@ -27,28 +29,31 @@ z_index = 999
 offset_left = -316.0
 offset_top = -197.0
 offset_right = -244.0
-offset_bottom = -148.0
+offset_bottom = -145.0
 text = "Juices: 20
 
 "
 
 [node name="Score" type="Label" parent="Camera2D"]
 z_index = 999
-offset_left = -31.0
+offset_left = 220.0
 offset_top = -199.0
 offset_right = 315.0
-offset_bottom = -176.0
+offset_bottom = -173.0
 text = "Score: 0
 "
-horizontal_alignment = 2
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Camera2D"]
+[node name="JuiceBackground" type="Panel" parent="Camera2D"]
+z_index = 998
+material = SubResource("CanvasItemMaterial_t0s46")
 offset_left = -324.0
 offset_top = -205.0
 offset_right = -223.0
 offset_bottom = -169.0
 
-[node name="Button2" type="Button" parent="Camera2D"]
+[node name="Button2" type="Panel" parent="Camera2D"]
+z_index = 998
 offset_left = 209.0
 offset_top = -206.0
 offset_right = 327.0
