@@ -19,7 +19,7 @@ unique_name_in_owner = true
 scale = Vector2(0.0901426, 0.0901426)
 texture = ExtResource("2_7id44")
 
-[node name="Label" type="Label" parent="BallSprite"]
+[node name="NumberLabel" type="Label" parent="BallSprite"]
 offset_right = 40.0
 offset_bottom = 23.0
 

@@ -15,7 +15,7 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_l7yo4"]
 font_size = 8
 
-[node name="Main2" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 7)
@@ -32,12 +32,12 @@ layer_2/name = "Decorations"
 layer_2/z_index = 500
 layer_2/tile_data = PackedInt32Array(2228261, 65536, 2, 1966120, 65536, 2, 2228270, 65536, 2, 2228287, 196608, 1, 1441859, 196608, 1, 1572919, 196608, 1, 1966109, 65536, 1, 1835031, 65536, 1)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_gvfjw")]
+[node name="Wizard" parent="." instance=ExtResource("2_gvfjw")]
 unique_name_in_owner = true
 z_index = 50
 position = Vector2(566, 538)
 
-[node name="Label" type="Label" parent="."]
+[node name="SecretLabel" type="Label" parent="."]
 offset_left = 445.0
 offset_top = 60.0
 offset_right = 583.0
@@ -45,14 +45,14 @@ offset_bottom = 109.0
 text = "Alright, smart guy
 play the game."
 
-[node name="Label2" type="Label" parent="."]
+[node name="WelcomeLabel" type="Label" parent="."]
 offset_left = 745.0
 offset_top = 458.0
 offset_right = 850.0
 offset_bottom = 481.0
 text = "Welcome to..."
 
-[node name="Label10" type="Label" parent="."]
+[node name="MoveLabel" type="Label" parent="."]
 offset_left = 517.0
 offset_top = 402.0
 offset_right = 622.0
@@ -62,7 +62,7 @@ text = "A / D
 to move"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="."]
+[node name="RockLabel" type="Label" parent="."]
 offset_left = 1315.0
 offset_top = 367.0
 offset_right = 1420.0
@@ -70,7 +70,7 @@ offset_bottom = 416.0
 text = "Oh no!
 A rock!"
 
-[node name="Label5" type="Label" parent="."]
+[node name="SolveLabel" type="Label" parent="."]
 offset_left = 1400.0
 offset_top = 255.0
 offset_right = 1571.0
@@ -79,7 +79,7 @@ text = "Aim the mouse
 and press the number
 key to solve it!"
 
-[node name="Label3" type="Label" parent="."]
+[node name="TitleLabel" type="Label" parent="."]
 offset_left = 908.0
 offset_top = 455.0
 offset_right = 1084.0
@@ -94,7 +94,7 @@ answer = 1
 question = "0+1"
 diffculty = 0
 
-[node name="Label6" type="Label" parent="."]
+[node name="JuiceLabel" type="Label" parent="."]
 z_index = -1
 offset_left = 1849.0
 offset_top = 246.0
@@ -104,21 +104,21 @@ text = "Getting an anwser wrong takes a juice!
 Running out of juices ends the game!
 Getting score increases juices."
 
-[node name="Label7" type="Label" parent="."]
+[node name="JumpLabel" type="Label" parent="."]
 offset_left = 2285.0
 offset_top = 377.0
 offset_right = 2395.0
 offset_bottom = 400.0
 text = "Press space to jump."
 
-[node name="Label8" type="Label" parent="."]
+[node name="HighJumpLabel" type="Label" parent="."]
 offset_left = 2617.0
 offset_top = 295.0
 offset_right = 2818.0
 offset_bottom = 318.0
 text = "Hold space to jump higher."
 
-[node name="Label9" type="Label" parent="."]
+[node name="AntiMathJuiceLabel" type="Label" parent="."]
 offset_left = 2989.0
 offset_top = 274.0
 offset_right = 3219.0
@@ -127,7 +127,7 @@ text = "Watch out!
 Anti-Math Juice takes 5 juices!"
 horizontal_alignment = 1
 
-[node name="Label11" type="Label" parent="."]
+[node name="CheckpointLabel" type="Label" parent="."]
 offset_left = 2974.0
 offset_top = 354.0
 offset_right = 3204.0
@@ -144,22 +144,22 @@ answer = 2
 question = "4-2"
 diffculty = 0
 
-[node name="A-Juice1" parent="." instance=ExtResource("5_76m1h")]
+[node name="AntiMathJuice" parent="." instance=ExtResource("5_76m1h")]
 position = Vector2(2990, 430)
 scale = Vector2(2.5, 1)
 
-[node name="A-Juice2" parent="." instance=ExtResource("5_76m1h")]
+[node name="LargeAntiMathJuice" parent="." instance=ExtResource("5_76m1h")]
 position = Vector2(3200, 430)
 scale = Vector2(5, 1)
 
 [node name="Spawn" type="Area2D" parent="."]
 position = Vector2(566, 541)
 
-[node name="Check" parent="." instance=ExtResource("6_newtr")]
+[node name="Checkpoint" parent="." instance=ExtResource("6_newtr")]
 position = Vector2(3087, 390)
 
-[node name="Area2D3" parent="." instance=ExtResource("7_cw3s8")]
+[node name="MainPortal" parent="." instance=ExtResource("7_cw3s8")]
 position = Vector2(3562, 229)
 
-[node name="Area2D4" parent="." instance=ExtResource("7_cw3s8")]
+[node name="SecretPortal" parent="." instance=ExtResource("7_cw3s8")]
 position = Vector2(585, 100)

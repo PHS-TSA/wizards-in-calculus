@@ -4,13 +4,6 @@
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="2_6q66m"]
 [ext_resource type="Script" path="res://game_over/restart_button.gd" id="3_swyii"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0ajqh"]
-font = ExtResource("2_6q66m")
-font_size = 128
-shadow_size = 12
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(2, 2)
-
 [sub_resource type="LabelSettings" id="LabelSettings_bgdev"]
 font = ExtResource("2_6q66m")
 font_size = 72
@@ -18,22 +11,21 @@ shadow_size = 12
 shadow_color = Color(0.374139, 0.374139, 0.374139, 1)
 shadow_offset = Vector2(2, 2)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_0ajqh"]
+font = ExtResource("2_6q66m")
+font_size = 128
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GameOver" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_3kk2o")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Background"]
 
-[node name="Label" type="Label" parent="Sprite2D/Camera2D"]
-offset_left = -289.0
-offset_top = -167.0
-offset_right = 274.0
-offset_bottom = 4.0
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_0ajqh")
-
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="TitleLabel" type="Label" parent="Background"]
 offset_left = -271.0
 offset_top = -346.0
 offset_right = 246.0
@@ -41,7 +33,15 @@ offset_bottom = -249.0
 text = "Wizards In Calculus"
 label_settings = SubResource("LabelSettings_bgdev")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="OverLabel" type="Label" parent="Background"]
+offset_left = -289.0
+offset_top = -167.0
+offset_right = 274.0
+offset_bottom = 4.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_0ajqh")
+
+[node name="RestartButton" type="Button" parent="."]
 top_level = true
 offset_left = 108.0
 offset_top = 233.0

@@ -32,7 +32,7 @@ var walls := MAX_WALLS
 
 @onready var juices := startjuices
 @onready var wizard_sprite: Sprite2D = %WizardSprite
-@onready var juices_text = $Camera2D/Juice
+@onready var juices_text = $Camera/Juice
 
 
 func _physics_process(delta: float) -> void:

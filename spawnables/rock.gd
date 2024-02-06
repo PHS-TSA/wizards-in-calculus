@@ -5,6 +5,7 @@ extends StaticBody2D
 @export var diffculty: int = 1
 
 @onready var label: Sprite2D = %RockSprite
+@onready var parent: Node2D = get_parent()
 
 
 func _ready() -> void:
@@ -14,14 +15,14 @@ func _ready() -> void:
 func take_damage(value: int) -> void:
 	if value == answer:
 		queue_free()
-		get_parent().get_node("CharacterBody2D").score += randi_range(
+		parent.get_node("Wizard").score += randi_range(
 			(1 * (diffculty * 3)) if diffculty > 0 else 1, (6 * diffculty) if diffculty > 0 else 2
 		)
-		get_parent().get_node("CharacterBody2D").get_node("Camera2D/Score").text = (
-			"Score: %s" % (get_parent().get_node("CharacterBody2D").score)
+		parent.get_node("Wizard/Camera/Score").text = (
+			"Score: %s" % (parent.get_node("Wizard").score)
 		)
 	else:
-		get_parent().get_node("CharacterBody2D").juices -= 1
-		get_parent().get_node("CharacterBody2D").get_node("Camera2D/Juice").text = (
-			"Juices: %s" % (get_parent().get_node("CharacterBody2D").juices)
+		parent.get_node("Wizard").juices -= 1
+		parent.get_node("Wizard/Camera/Juice").text = (
+			"Juices: %s" % (parent.get_node("Wizard").juices)
 		)

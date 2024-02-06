@@ -43,7 +43,7 @@ answer = 5
 question = "(700/10) -65"
 diffculty = 3
 
-[node name="Label" type="Label" parent="."]
+[node name="WallJumpLabel" type="Label" parent="."]
 offset_left = 338.0
 offset_top = 368.0
 offset_right = 456.0
@@ -68,11 +68,11 @@ answer = 9
 question = "5+4"
 diffculty = 2
 
-[node name="Area2D" parent="." instance=ExtResource("5_dhd8p")]
+[node name="AntiMathJuice" parent="." instance=ExtResource("5_dhd8p")]
 position = Vector2(11, 263)
 scale = Vector2(16, 0.3)
 
-[node name="Area2D2" parent="." instance=ExtResource("5_dhd8p")]
+[node name="AntiMathJuicePool" parent="." instance=ExtResource("5_dhd8p")]
 position = Vector2(1843, 475)
 scale = Vector2(70, 0.3)
 

@@ -11,14 +11,14 @@ shadow_size = 12
 shadow_color = Color(0.374139, 0.374139, 0.374139, 1)
 shadow_offset = Vector2(2, 2)
 
-[node name="Node2D" type="Node2D"]
+[node name="MainMenu" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_7fi2u")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera" type="Camera2D" parent="Background"]
 
-[node name="Label" type="Label" parent="Sprite2D"]
+[node name="TitleLabel" type="Label" parent="Background"]
 offset_left = -271.0
 offset_top = -346.0
 offset_right = 246.0
