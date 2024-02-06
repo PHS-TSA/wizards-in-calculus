@@ -17,9 +17,6 @@ unique_name_in_owner = true
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_nqjmu")
 
-[node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
 [node name="Juice" type="Label" parent="Camera"]
 z_index = 999
 offset_left = -316.0

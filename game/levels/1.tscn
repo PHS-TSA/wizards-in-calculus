@@ -26,6 +26,9 @@ layer_2/tile_data = PackedInt32Array(-393209, 65536, 2, 0, 65536, 2, 65532, 1966
 unique_name_in_owner = true
 position = Vector2(574, 536)
 
+[node name="Camera" type="Camera2D" parent="Wizard"]
+zoom = Vector2(2, 2)
+
 [node name="Rock" parent="." instance=ExtResource("3_ay7so")]
 position = Vector2(851, 503)
 scale = Vector2(3.41411, 5.26295)

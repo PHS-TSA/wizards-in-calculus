@@ -37,6 +37,9 @@ unique_name_in_owner = true
 z_index = 50
 position = Vector2(566, 538)
 
+[node name="Camera" type="Camera2D" parent="Wizard"]
+zoom = Vector2(2, 2)
+
 [node name="SecretLabel" type="Label" parent="."]
 offset_left = 445.0
 offset_top = 60.0
