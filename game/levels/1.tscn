@@ -37,7 +37,7 @@ position = Vector2(851, 503)
 scale = Vector2(3.41411, 5.26295)
 answer = 4
 question = "4/1"
-diffculty = 0
+difficulty = 0
 
 [node name="Spawn" type="Area2D" parent="."]
 position = Vector2(576, 535)
@@ -47,7 +47,7 @@ position = Vector2(214, 373)
 scale = Vector2(3, 3)
 answer = 5
 question = "(700/10) -65"
-diffculty = 3
+difficulty = 3
 
 [node name="WallJumpLabel" type="Label" parent="."]
 offset_left = 338.0
@@ -65,14 +65,14 @@ rotation = -0.785398
 scale = Vector2(3, 3)
 answer = 8
 question = "√64"
-diffculty = 4
+difficulty = 4
 
 [node name="Rock5" parent="." instance=ExtResource("3_ay7so")]
 position = Vector2(-6, 465)
 scale = Vector2(3, 3)
 answer = 9
 question = "5+4"
-diffculty = 2
+difficulty = 2
 
 [node name="AntiMathJuice" parent="." instance=ExtResource("5_dhd8p")]
 position = Vector2(11, 263)

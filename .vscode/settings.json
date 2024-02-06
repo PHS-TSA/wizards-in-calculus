@@ -3,7 +3,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["tscn"],
+  "cSpell.words": ["onready", "spawnables", "tscn"],
   "cSpell.enableFiletypes": ["gdscript"],
   "editor.codeActionsOnSave": {
     "quickfix.biome": "always",

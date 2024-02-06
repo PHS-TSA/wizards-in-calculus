@@ -98,7 +98,7 @@ position = Vector2(1692, 278)
 scale = Vector2(5, 8)
 answer = 1
 question = "0+1"
-diffculty = 0
+difficulty = 0
 
 [node name="JuiceLabel" type="Label" parent="."]
 z_index = -1
@@ -148,7 +148,7 @@ rotation = -0.760964
 scale = Vector2(6, 8)
 answer = 2
 question = "4-2"
-diffculty = 0
+difficulty = 0
 
 [node name="AntiMathJuice" parent="." instance=ExtResource("5_76m1h")]
 position = Vector2(2990, 430)

@@ -15,12 +15,12 @@ const MAX_WALLS := 3
 @export var jump_velocity: float = -350.0
 
 ## How fast to go towards full speed.
-@export var rampin: int = 20
+@export var ramping: int = 20
 
-## How far the whizard can jump.
+## How far the wizard can jump.
 @export var floaty: float = 150
 
-## How fast the whizard should stop after they stop jumping.
+## How fast the wizard should stop after they stop jumping.
 @export var feather: int = 20
 
 ## Slow down, kid!
@@ -75,16 +75,16 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		# This basically just speeds up by rampin.
+		# This basically just speeds up by ramping.
 		velocity.x = move_toward(
-			velocity.x, direction * speed, rampin * (1 if is_on_floor() else 2)
+			velocity.x, direction * speed, ramping * (1 if is_on_floor() else 2)
 		)
 		if direction == 1:
 			wizard_sprite.flip_h = true
 		elif direction == -1:
 			wizard_sprite.flip_h = false
 	else:
-		# Slow the whizard down with friction.
+		# Slow the wizard down with friction.
 		velocity.x = move_toward(velocity.x, 0, friction)
 
 	move_and_slide()

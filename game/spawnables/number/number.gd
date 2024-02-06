@@ -1,7 +1,7 @@
 extends Area2D
 
 var velocity = Vector2.RIGHT
-var travelled_distance := 0.0
+var traveled_distance := 0.0
 var num: int
 
 @onready var ball: Sprite2D = %BallSprite
@@ -15,8 +15,8 @@ func _physics_process(delta: float) -> void:
 		ball.flip_v = true
 		ball.flip_h = true
 	position += velocity * SPEED * delta
-	travelled_distance += SPEED * delta
-	if travelled_distance > RANGE:
+	traveled_distance += SPEED * delta
+	if traveled_distance > RANGE:
 		queue_free()
 
 
