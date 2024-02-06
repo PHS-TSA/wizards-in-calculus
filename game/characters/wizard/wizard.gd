@@ -44,6 +44,14 @@ var walls := MAX_WALLS
 @onready var wizard_sprite: Sprite2D = %WizardSprite
 
 
+func _process(_delta: float) -> void:
+	if score >= 100 * times:  # Game Over!!
+		times += 0.5
+		mana += 1
+	if mana <= 0:
+		get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
+
+
 func _physics_process(delta: float) -> void:
 	# Add  gravity.
 	if not is_on_floor():
@@ -77,10 +85,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, friction)
 
 	move_and_slide()
-
-	## Game Over!!
-	if score >= 100 * times:
-		times += 0.5
-		mana += 1
-	if mana <= 0:
-		get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
