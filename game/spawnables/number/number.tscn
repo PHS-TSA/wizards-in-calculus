@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://hiclokv8sham"]
+
+[ext_resource type="Script" path="res://game/spawnables/number/number.gd" id="1_ueyug"]
+[ext_resource type="Texture2D" uid="uid://dgdt3twjqao7b" path="res://assets/number_balls/1.png" id="2_7id44"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sd8cv"]
+radius = 9.82594
+
+[node name="NumberBall" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ueyug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.4248, 1.40244)
+shape = SubResource("CircleShape2D_sd8cv")
+
+[node name="BallSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.0901426, 0.0901426)
+texture = ExtResource("2_7id44")
+
+[node name="NumberLabel" type="Label" parent="BallSprite"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
