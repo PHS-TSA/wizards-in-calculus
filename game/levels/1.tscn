@@ -50,6 +50,7 @@ question = "(700/10) -65"
 difficulty = 3
 
 [node name="WallJumpLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 338.0
 offset_top = 368.0
 offset_right = 456.0

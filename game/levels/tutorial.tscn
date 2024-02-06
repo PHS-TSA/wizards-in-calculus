@@ -37,8 +37,12 @@ layer_2/tile_data = PackedInt32Array(2228261, 65536, 2, 1966120, 65536, 2, 22282
 
 [node name="Wizard" parent="." instance=ExtResource("2_gvfjw")]
 unique_name_in_owner = true
-z_index = 50
 position = Vector2(566, 538)
+speed = 200
+jump_velocity = -350.0
+floaty = 150.0
+feather = 20
+friction = 25
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
@@ -52,6 +56,7 @@ text = "Alright, smart guy
 play the game."
 
 [node name="WelcomeLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 745.0
 offset_top = 458.0
 offset_right = 850.0
@@ -59,6 +64,7 @@ offset_bottom = 481.0
 text = "Welcome to..."
 
 [node name="MoveLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 517.0
 offset_top = 402.0
 offset_right = 622.0
@@ -69,6 +75,7 @@ to move"
 horizontal_alignment = 1
 
 [node name="RockLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 1315.0
 offset_top = 367.0
 offset_right = 1420.0
@@ -77,6 +84,7 @@ text = "Oh no!
 A rock!"
 
 [node name="SolveLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 1400.0
 offset_top = 255.0
 offset_right = 1571.0
@@ -86,6 +94,7 @@ and press the number
 key to solve it!"
 
 [node name="TitleLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 908.0
 offset_top = 455.0
 offset_right = 1084.0
@@ -101,7 +110,7 @@ question = "0+1"
 difficulty = 0
 
 [node name="JuiceLabel" type="Label" parent="."]
-z_index = -1
+z_index = -5
 offset_left = 1849.0
 offset_top = 246.0
 offset_right = 2148.0
@@ -111,6 +120,7 @@ Running out of juices ends the game!
 Getting score increases juices."
 
 [node name="JumpLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2285.0
 offset_top = 377.0
 offset_right = 2395.0
@@ -118,6 +128,7 @@ offset_bottom = 400.0
 text = "Press space to jump."
 
 [node name="HighJumpLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2617.0
 offset_top = 295.0
 offset_right = 2818.0
@@ -125,6 +136,7 @@ offset_bottom = 318.0
 text = "Hold space to jump higher."
 
 [node name="AntiMathJuiceLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2989.0
 offset_top = 274.0
 offset_right = 3219.0
@@ -134,6 +146,7 @@ Anti-Math Juice takes 5 juices!"
 horizontal_alignment = 1
 
 [node name="CheckpointLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2974.0
 offset_top = 354.0
 offset_right = 3204.0
@@ -162,6 +175,7 @@ scale = Vector2(5, 1)
 position = Vector2(566, 541)
 
 [node name="Checkpoint" parent="." instance=ExtResource("6_newtr")]
+z_index = -5
 position = Vector2(3087, 390)
 
 [node name="MainPortal" parent="." instance=ExtResource("7_cw3s8")]
