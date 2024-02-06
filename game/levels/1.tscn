@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://eui6qcwl2wdl"]
 
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_6m48w"]
-[ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_jk3qu"]
-[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="3_ay7so"]
-[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_dhd8p"]
+[ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://game/characters/wizard/wizard.tscn" id="2_jk3qu"]
+[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="3_ay7so"]
+[ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://game/scenes/anti_math_juice/anti_math_juice.tscn" id="5_dhd8p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lff1f"]
 

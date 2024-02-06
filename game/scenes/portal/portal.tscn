@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkxaf8d4e86ux"]
 
-[ext_resource type="Script" path="res://spawnables/portal.gd" id="1_348rm"]
+[ext_resource type="Script" path="res://game/scenes/portal/portal.gd" id="1_348rm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7dgc"]
 

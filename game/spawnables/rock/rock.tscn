@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxtj2socpdo5p"]
 
-[ext_resource type="Script" path="res://spawnables/rock.gd" id="1_6wxje"]
+[ext_resource type="Script" path="res://game/spawnables/rock/rock.gd" id="1_6wxje"]
 [ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://assets/sprites/rock.png" id="2_dtg15"]
-[ext_resource type="Script" path="res://spawnables/rock_label.gd" id="3_yp8vt"]
+[ext_resource type="Script" path="res://game/spawnables/rock/rock_label.gd" id="3_yp8vt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbncs"]
 font_size = 80
