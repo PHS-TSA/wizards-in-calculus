@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://eui6qcwl2wdl"]
+[gd_scene load_steps=8 format=3 uid="uid://eui6qcwl2wdl"]
 
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_6m48w"]
+[ext_resource type="Script" path="res://game/levels/level.gd" id="1_bwyiu"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://game/characters/wizard/wizard.tscn" id="2_jk3qu"]
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="3_ay7so"]
 [ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up.tscn" id="5_d0k0g"]
@@ -9,6 +10,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_lff1f"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_bwyiu")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_6m48w")
@@ -26,12 +28,6 @@ layer_2/tile_data = PackedInt32Array(-393209, 65536, 2, 0, 65536, 2, 65532, 1966
 [node name="Wizard" parent="." instance=ExtResource("2_jk3qu")]
 unique_name_in_owner = true
 position = Vector2(574, 536)
-speed = null
-jump_velocity = null
-rampin = null
-floaty = null
-feather = null
-friction = null
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
@@ -94,5 +90,6 @@ question = "1+1"
 
 [node name="HUD" parent="." instance=ExtResource("5_d0k0g")]
 
+[connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bimm0sh6fgcge"]
+[gd_scene load_steps=12 format=3 uid="uid://bimm0sh6fgcge"]
 
+[ext_resource type="Script" path="res://game/levels/level.gd" id="1_2f2y5"]
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_ixvwr"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://game/characters/wizard/wizard.tscn" id="2_gvfjw"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="3_l5147"]
@@ -17,6 +18,7 @@ font_size = 24
 font_size = 8
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_2f2y5")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 7)
@@ -37,12 +39,6 @@ layer_2/tile_data = PackedInt32Array(2228261, 65536, 2, 1966120, 65536, 2, 22282
 unique_name_in_owner = true
 z_index = 50
 position = Vector2(566, 538)
-speed = null
-jump_velocity = null
-rampin = null
-floaty = null
-feather = null
-friction = null
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
@@ -176,5 +172,6 @@ position = Vector2(585, 100)
 
 [node name="HUD" parent="." instance=ExtResource("8_c3tvq")]
 
+[connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]
