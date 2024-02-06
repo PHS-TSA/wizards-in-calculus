@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bimm0sh6fgcge"]
 
-[ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://sprites/tiles.tres" id="1_ixvwr"]
+[ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_ixvwr"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://wizard.tscn" id="2_gvfjw"]
-[ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="3_l5147"]
+[ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="3_l5147"]
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://spawnables/rock.tscn" id="3_otly5"]
 [ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://spawnables/amj.tscn" id="5_76m1h"]
 [ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://spawnables/checkpoint.tscn" id="6_newtr"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsfrnv85dmm48"
-path="res://.godot/imported/2.png-ec09907dc9c501458d74ba94a0246498.ctex"
+uid="uid://daeq7tqcv820"
+path="res://.godot/imported/overworld_map.png-e162d543f33f888f742bc30311d3dec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://number_balls/ball_sprites/2.png"
-dest_files=["res://.godot/imported/2.png-ec09907dc9c501458d74ba94a0246498.ctex"]
+source_file="res://assets/tilesets/map_sprites/overworld_map.png"
+dest_files=["res://.godot/imported/overworld_map.png-e162d543f33f888f742bc30311d3dec2.ctex"]
 
 [params]
 

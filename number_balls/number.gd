@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	const SPEED := 300
 	const RANGE := 1200
 	var direction := Vector2.RIGHT.rotated(rotation)
-	ball.texture = load("res://number_balls/ball_sprites/%s.png" % num)
+	ball.texture = load("res://assets/sprites/number_balls/%s.png" % num)
 	if direction.x < 0:
 		ball.flip_v = true
 		ball.flip_h = true

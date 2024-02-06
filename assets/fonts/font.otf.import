@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cacer1um2xmlh"
-path="res://.godot/imported/font.otf-92ce462d6ff18dc63431589116584e3a.fontdata"
+path="res://.godot/imported/font.otf-386a6f0effc4a25775effb80c775934f.fontdata"
 
 [deps]
 
-source_file="res://menu/font.otf"
-dest_files=["res://.godot/imported/font.otf-92ce462d6ff18dc63431589116584e3a.fontdata"]
+source_file="res://assets/fonts/font.otf"
+dest_files=["res://.godot/imported/font.otf-386a6f0effc4a25775effb80c775934f.fontdata"]
 
 [params]
 

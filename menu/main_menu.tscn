@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgwm7m4bybod1"]
 
-[ext_resource type="Texture2D" uid="uid://cmvlgrixiuc82" path="res://menu/menu.webp" id="1_7fi2u"]
-[ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://menu/font.otf" id="2_5wdvc"]
+[ext_resource type="Texture2D" uid="uid://dylon3a25hyr1" path="res://assets/sprites/menu.webp" id="1_7fi2u"]
+[ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="2_5wdvc"]
 [ext_resource type="Script" path="res://menu/start_button.gd" id="3_ol8sj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgdev"]
