@@ -175,3 +175,7 @@ position = Vector2(585, 100)
 [connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]
+[connection signal="hit" from="Rock" to="Wizard" method="_on_rock_hit"]
+[connection signal="hit" from="Rock2" to="Wizard" method="_on_rock_hit"]
+[connection signal="poisoned" from="AntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="LargeAntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]

@@ -5,12 +5,6 @@
 
 [node name="Wizard" type="CharacterBody2D"]
 script = ExtResource("1_0rb7j")
-speed = null
-jump_velocity = null
-rampin = null
-floaty = null
-feather = null
-friction = null
 
 [node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(2, 23, -8, 23, -10, 20, -14, -1, -8, -13, 5, -24, 14, -17, 14, -5, 10, 20)
