@@ -126,4 +126,3 @@ func _on_rock_hit(points: int) -> void:
 
 func _on_anti_math_juice_poisoned(amount: int) -> void:
 	mana -= amount
-	position = get_parent().get_node("Spawn").global_position

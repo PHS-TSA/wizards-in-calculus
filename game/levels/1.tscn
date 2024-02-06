@@ -39,7 +39,8 @@ answer = 4
 question = "4/1"
 difficulty = 0
 
-[node name="Spawn" type="Area2D" parent="."]
+[node name="Spawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(576, 535)
 
 [node name="Rock3" parent="." instance=ExtResource("3_ay7so")]
@@ -98,6 +99,8 @@ question = "1+1"
 [connection signal="hit" from="Rock3" to="Wizard" method="_on_rock_hit"]
 [connection signal="hit" from="Rock4" to="Wizard" method="_on_rock_hit"]
 [connection signal="hit" from="Rock5" to="Wizard" method="_on_rock_hit"]
+[connection signal="poisoned" from="AntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="AntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="AntiMathJuicePool" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="AntiMathJuicePool" to="Wizard" method="_on_anti_math_juice_poisoned"]
 [connection signal="hit" from="Rock2" to="Wizard" method="_on_rock_hit"]

@@ -38,11 +38,6 @@ layer_2/tile_data = PackedInt32Array(2228261, 65536, 2, 1966120, 65536, 2, 22282
 [node name="Wizard" parent="." instance=ExtResource("2_gvfjw")]
 unique_name_in_owner = true
 position = Vector2(566, 538)
-speed = 200
-jump_velocity = -350.0
-floaty = 150.0
-feather = 20
-friction = 25
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
@@ -171,7 +166,8 @@ scale = Vector2(2.5, 1)
 position = Vector2(3200, 430)
 scale = Vector2(5, 1)
 
-[node name="Spawn" type="Area2D" parent="."]
+[node name="Spawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(566, 541)
 
 [node name="Checkpoint" parent="." instance=ExtResource("6_newtr")]
@@ -191,5 +187,7 @@ position = Vector2(585, 100)
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]
 [connection signal="hit" from="Rock" to="Wizard" method="_on_rock_hit"]
 [connection signal="hit" from="Rock2" to="Wizard" method="_on_rock_hit"]
+[connection signal="poisoned" from="AntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="AntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="LargeAntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="LargeAntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
