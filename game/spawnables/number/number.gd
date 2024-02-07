@@ -1,6 +1,7 @@
+class_name NumberBall
 extends Area2D
 
-var velocity = Vector2.RIGHT
+var velocity := Vector2.RIGHT
 var traveled_distance := 0.0
 var num: int
 
@@ -22,5 +23,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	queue_free()
-	if body.has_method("take_damage"):
-		body.take_damage(num)
+	if body is Rock:
+		var rock: Rock = body  # GDScript doesn't have flow typing.
+		rock.take_damage(num)

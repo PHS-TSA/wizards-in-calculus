@@ -1,3 +1,4 @@
+class_name Wizard
 extends CharacterBody2D
 
 signal score_updated(value: int)
@@ -52,7 +53,9 @@ func _process(_delta: float) -> void:
 		self.times += 0.5
 		self.mana += 1
 	if self.mana <= 0:
-		self.get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
+		var _new_tree := self.get_tree().change_scene_to_file(
+			"res://game/menus/game_over/game_over.tscn"
+		)
 
 
 func _physics_process(delta: float) -> void:
@@ -64,11 +67,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and self.is_on_floor():
 		velocity.y = jump_velocity
 	if Input.is_action_just_pressed("jump") and self.is_on_wall_only() and self.walls > 0:
-		self.velocity.y = self.ump_velocity
+		self.velocity.y = self.jump_velocity
 		self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
 		self.walls -= 1
 	if Input.is_action_just_released("jump") and not self.is_on_floor() and not self.velocity.y > 0:
-		self.velocity.y = move_toward(self.velocity.y, 0, self.feather + abs(self.velocity.y / 2))
+		self.velocity.y = move_toward(self.velocity.y, 0, self.feather + absf(self.velocity.y / 2))
 
 	if is_on_floor():
 		self.walls = max_walls
@@ -87,10 +90,10 @@ func _physics_process(delta: float) -> void:
 		# Slow the wizard down with friction.
 		self.velocity.x = move_toward(velocity.x, 0, friction)
 
-	self.move_and_slide()
+	var _collided := self.move_and_slide()
 
 
-func firing():
+func firing() -> void:
 	if Input.is_action_just_pressed("zero"):
 		self.fire(0)
 	elif Input.is_action_just_pressed("one"):
