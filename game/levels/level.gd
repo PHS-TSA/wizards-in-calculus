@@ -1,3 +1,4 @@
+class_name Level
 extends Node2D
 
 const Ball := preload("res://game/spawnables/number/number.tscn")

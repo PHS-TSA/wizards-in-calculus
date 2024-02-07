@@ -1,3 +1,4 @@
+class_name RestartButton
 extends Button
 
 

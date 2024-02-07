@@ -1,3 +1,4 @@
+class_name Checkpoint
 extends Area2D
 
 @onready var spawn: Marker2D = %Spawn

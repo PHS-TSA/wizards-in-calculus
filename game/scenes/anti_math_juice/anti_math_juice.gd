@@ -1,3 +1,4 @@
+class_name AntiMathJuice
 extends Area2D
 
 signal poisoned(amount: int)

@@ -1,3 +1,4 @@
+class_name Portal
 extends Area2D
 
 @export var level: int = 1

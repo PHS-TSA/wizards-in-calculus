@@ -1,3 +1,4 @@
+class_name HeadsUp
 extends CanvasLayer
 
 @export var mana: int = 20:
