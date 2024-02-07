@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+signal score_updated
+
+signal mana_updated
+
 const MAX_WALLS := 3
 
 ## You can guess.
@@ -20,9 +24,16 @@ const MAX_WALLS := 3
 ## Slow down, kid!
 @export var friction: int = 25
 
-@export var startjuices: int = 20
+var score := 0:
+	set(value):
+		score = value
+		score_updated.emit(score)
 
-var score := 0
+var mana := 20:
+	set(value):
+		mana = value
+		mana_updated.emit(mana)
+
 var times := 1.0
 
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -30,9 +41,15 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var walls := MAX_WALLS
 
-@onready var juices := startjuices
 @onready var wizard_sprite: Sprite2D = %WizardSprite
-@onready var juices_text = $Camera/Juice
+
+
+func _process(_delta: float) -> void:
+	if score >= 100 * times:  # Game Over!!
+		times += 0.5
+		mana += 1
+	if mana <= 0:
+		get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
 
 
 func _physics_process(delta: float) -> void:
@@ -68,11 +85,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, friction)
 
 	move_and_slide()
-
-	## Game Over!!
-	if score >= 100 * times:
-		times += 0.5
-		juices += 1
-		juices_text.text = "Juices: %s" % juices
-	if juices <= 0:
-		get_tree().change_scene_to_file("res://game_over/game_over.tscn")

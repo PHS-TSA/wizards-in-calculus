@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dylon3a25hyr1" path="res://assets/sprites/menu.webp" id="1_3kk2o"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="2_6q66m"]
-[ext_resource type="Script" path="res://game_over/restart_button.gd" id="3_swyii"]
+[ext_resource type="Script" path="res://game/menus/game_over/restart_button.gd" id="3_swyii"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgdev"]
 font = ExtResource("2_6q66m")

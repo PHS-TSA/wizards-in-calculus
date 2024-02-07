@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci4k3eyocn7g2"]
+
+[ext_resource type="StyleBox" uid="uid://c2i2mjrwx7e" path="res://game/styles/hud_box.tres" id="1_4w0lt"]
+[ext_resource type="Script" path="res://game/components/heads_up.gd" id="1_ieho2"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ieho2")
+
+[node name="ManaLabel" type="Label" parent="."]
+offset_right = 262.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_4w0lt")
+text = "Mana: 20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -262.0
+offset_bottom = 146.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_4w0lt")
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

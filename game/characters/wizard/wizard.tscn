@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqfj4dlx64q0r"]
+[gd_scene load_steps=4 format=3 uid="uid://bqfj4dlx64q0r"]
 
 [ext_resource type="Script" path="res://game/characters/wizard/wizard.gd" id="1_0rb7j"]
 [ext_resource type="Texture2D" uid="uid://cequfnyxmgqtu" path="res://assets/sprites/wizard.png" id="2_nqjmu"]
 [ext_resource type="Script" path="res://game/characters/wizard/rotation_point.gd" id="3_sw5yd"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t0s46"]
 
 [node name="Wizard" type="CharacterBody2D"]
 script = ExtResource("1_0rb7j")
@@ -16,44 +14,6 @@ polygon = PackedVector2Array(2, 23, -8, 23, -10, 20, -14, -1, -8, -13, 5, -24, 1
 unique_name_in_owner = true
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_nqjmu")
-
-[node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
-[node name="Juice" type="Label" parent="Camera"]
-z_index = 999
-offset_left = -316.0
-offset_top = -197.0
-offset_right = -244.0
-offset_bottom = -145.0
-text = "Juices: 20
-
-"
-
-[node name="Score" type="Label" parent="Camera"]
-z_index = 999
-offset_left = 220.0
-offset_top = -199.0
-offset_right = 315.0
-offset_bottom = -173.0
-text = "Score: 0
-"
-horizontal_alignment = 1
-
-[node name="JuiceBackground" type="Panel" parent="Camera"]
-z_index = 998
-material = SubResource("CanvasItemMaterial_t0s46")
-offset_left = -324.0
-offset_top = -205.0
-offset_right = -223.0
-offset_bottom = -169.0
-
-[node name="Button2" type="Panel" parent="Camera"]
-z_index = 998
-offset_left = 209.0
-offset_top = -206.0
-offset_right = 327.0
-offset_bottom = -170.0
 
 [node name="RotationPoint" type="Marker2D" parent="."]
 visible = false

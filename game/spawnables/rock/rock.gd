@@ -18,11 +18,5 @@ func take_damage(value: int) -> void:
 		parent.get_node("Wizard").score += randi_range(
 			(1 * (diffculty * 3)) if diffculty > 0 else 1, (6 * diffculty) if diffculty > 0 else 2
 		)
-		parent.get_node("Wizard/Camera/Score").text = (
-			"Score: %s" % (parent.get_node("Wizard").score)
-		)
 	else:
-		parent.get_node("Wizard").juices -= 1
-		parent.get_node("Wizard/Camera/Juice").text = (
-			"Juices: %s" % (parent.get_node("Wizard").juices)
-		)
+		parent.get_node("Wizard").mana -= 1
