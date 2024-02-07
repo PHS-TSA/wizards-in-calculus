@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bimm0sh6fgcge"]
+[gd_scene load_steps=12 format=3 uid="uid://bimm0sh6fgcge"]
 
+[ext_resource type="Script" path="res://game/levels/level.gd" id="1_2f2y5"]
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_ixvwr"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://game/characters/wizard/wizard.tscn" id="2_gvfjw"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="3_l5147"]
@@ -17,6 +18,7 @@ font_size = 24
 font_size = 8
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_2f2y5")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 7)
@@ -35,14 +37,7 @@ layer_2/tile_data = PackedInt32Array(2228261, 65536, 2, 1966120, 65536, 2, 22282
 
 [node name="Wizard" parent="." instance=ExtResource("2_gvfjw")]
 unique_name_in_owner = true
-z_index = 50
 position = Vector2(566, 538)
-speed = null
-jump_velocity = null
-rampin = null
-floaty = null
-feather = null
-friction = null
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
@@ -56,6 +51,7 @@ text = "Alright, smart guy
 play the game."
 
 [node name="WelcomeLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 745.0
 offset_top = 458.0
 offset_right = 850.0
@@ -63,6 +59,7 @@ offset_bottom = 481.0
 text = "Welcome to..."
 
 [node name="MoveLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 517.0
 offset_top = 402.0
 offset_right = 622.0
@@ -73,6 +70,7 @@ to move"
 horizontal_alignment = 1
 
 [node name="RockLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 1315.0
 offset_top = 367.0
 offset_right = 1420.0
@@ -81,6 +79,7 @@ text = "Oh no!
 A rock!"
 
 [node name="SolveLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 1400.0
 offset_top = 255.0
 offset_right = 1571.0
@@ -90,6 +89,7 @@ and press the number
 key to solve it!"
 
 [node name="TitleLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 908.0
 offset_top = 455.0
 offset_right = 1084.0
@@ -102,10 +102,10 @@ position = Vector2(1692, 278)
 scale = Vector2(5, 8)
 answer = 1
 question = "0+1"
-diffculty = 0
+difficulty = 0
 
 [node name="JuiceLabel" type="Label" parent="."]
-z_index = -1
+z_index = -5
 offset_left = 1849.0
 offset_top = 246.0
 offset_right = 2148.0
@@ -115,6 +115,7 @@ Running out of juices ends the game!
 Getting score increases juices."
 
 [node name="JumpLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2285.0
 offset_top = 377.0
 offset_right = 2395.0
@@ -122,6 +123,7 @@ offset_bottom = 400.0
 text = "Press space to jump."
 
 [node name="HighJumpLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2617.0
 offset_top = 295.0
 offset_right = 2818.0
@@ -129,6 +131,7 @@ offset_bottom = 318.0
 text = "Hold space to jump higher."
 
 [node name="AntiMathJuiceLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2989.0
 offset_top = 274.0
 offset_right = 3219.0
@@ -138,6 +141,7 @@ Anti-Math Juice takes 5 juices!"
 horizontal_alignment = 1
 
 [node name="CheckpointLabel" type="Label" parent="."]
+z_index = -5
 offset_left = 2974.0
 offset_top = 354.0
 offset_right = 3204.0
@@ -152,7 +156,7 @@ rotation = -0.760964
 scale = Vector2(6, 8)
 answer = 2
 question = "4-2"
-diffculty = 0
+difficulty = 0
 
 [node name="AntiMathJuice" parent="." instance=ExtResource("5_76m1h")]
 position = Vector2(2990, 430)
@@ -162,10 +166,12 @@ scale = Vector2(2.5, 1)
 position = Vector2(3200, 430)
 scale = Vector2(5, 1)
 
-[node name="Spawn" type="Area2D" parent="."]
+[node name="Spawn" type="Marker2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(566, 541)
 
 [node name="Checkpoint" parent="." instance=ExtResource("6_newtr")]
+z_index = -5
 position = Vector2(3087, 390)
 
 [node name="MainPortal" parent="." instance=ExtResource("7_cw3s8")]
@@ -176,5 +182,12 @@ position = Vector2(585, 100)
 
 [node name="HUD" parent="." instance=ExtResource("8_c3tvq")]
 
+[connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]
+[connection signal="hit" from="Rock" to="Wizard" method="_on_rock_hit"]
+[connection signal="hit" from="Rock2" to="Wizard" method="_on_rock_hit"]
+[connection signal="poisoned" from="AntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="AntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="LargeAntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
+[connection signal="poisoned" from="LargeAntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-signal score_updated
+signal score_updated(value: int)
 
-signal mana_updated
+signal mana_updated(value: int)
+
+signal did_fire(ball: int, direction: float, location: Vector2)
 
 const MAX_WALLS := 3
 
@@ -13,12 +15,12 @@ const MAX_WALLS := 3
 @export var jump_velocity: float = -350.0
 
 ## How fast to go towards full speed.
-@export var rampin: int = 20
+@export var ramping: int = 20
 
-## How far the whizard can jump.
+## How far the wizard can jump.
 @export var floaty: float = 150
 
-## How fast the whizard should stop after they stop jumping.
+## How fast the wizard should stop after they stop jumping.
 @export var feather: int = 20
 
 ## Slow down, kid!
@@ -45,6 +47,7 @@ var walls := MAX_WALLS
 
 
 func _process(_delta: float) -> void:
+	firing()
 	if score >= 100 * times:  # Game Over!!
 		times += 0.5
 		mana += 1
@@ -72,16 +75,54 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		# This basically just speeds up by rampin.
+		# This basically just speeds up by ramping.
 		velocity.x = move_toward(
-			velocity.x, direction * speed, rampin * (1 if is_on_floor() else 2)
+			velocity.x, direction * speed, ramping * (1 if is_on_floor() else 2)
 		)
 		if direction == 1:
 			wizard_sprite.flip_h = true
 		elif direction == -1:
 			wizard_sprite.flip_h = false
 	else:
-		# Slow the whizard down with friction.
+		# Slow the wizard down with friction.
 		velocity.x = move_toward(velocity.x, 0, friction)
 
 	move_and_slide()
+
+
+func firing():
+	if Input.is_action_just_pressed("zero"):
+		fire(0)
+	elif Input.is_action_just_pressed("one"):
+		fire(1)
+	elif Input.is_action_just_pressed("two"):
+		fire(2)
+	elif Input.is_action_just_pressed("three"):
+		fire(3)
+	elif Input.is_action_just_pressed("four"):
+		fire(4)
+	elif Input.is_action_just_pressed("five"):
+		fire(5)
+	elif Input.is_action_just_pressed("six"):
+		fire(6)
+	elif Input.is_action_just_pressed("seven"):
+		fire(7)
+	elif Input.is_action_just_pressed("eight"):
+		fire(8)
+	elif Input.is_action_just_pressed("nine"):
+		fire(9)
+
+
+func fire(num: int) -> void:
+	did_fire.emit(num, global_position.angle_to_point(get_global_mouse_position()), global_position)
+
+
+func _on_rock_hit(points: int) -> void:
+	if points > 0:
+		score += points
+	else:
+		mana += points
+
+
+func _on_anti_math_juice_poisoned(amount: int) -> void:
+	mana -= amount
