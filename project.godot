@@ -29,6 +29,7 @@ gdscript/warnings/return_value_discarded=1
 
 window/size/viewport_width=1280
 window/size/viewport_height=800
+window/size/borderless=true
 window/stretch/aspect="ignore"
 
 [dotnet]
