@@ -149,7 +149,7 @@ jobs:
     permissions:
       id-token: write # Needed to authenticate with Deno Deploy.
     concurrency:
-      group: deploy
+      group: deploy-${{ github.ref }}
       cancel-in-progress: true
 
     steps:
