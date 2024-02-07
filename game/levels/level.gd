@@ -2,6 +2,9 @@ extends Node2D
 
 const Ball := preload("res://game/spawnables/number/number.tscn")
 
+@onready var wizard: CharacterBody2D = %Wizard
+@onready var spawn: Marker2D = %Spawn
+
 
 func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void:
 	var spawned = Ball.instantiate()
@@ -14,4 +17,4 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 
 
 func _on_anti_math_juice_poisoned(_amount: int) -> void:
-	%Wizard.position = %Spawn.global_position
+	self.wizard.position = self.spawn.global_position
