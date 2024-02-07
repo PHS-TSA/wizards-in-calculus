@@ -10,13 +10,13 @@ var num: int
 func _physics_process(delta: float) -> void:
 	const SPEED := 300
 	const RANGE := 1200
-	ball.texture = load("res://assets/sprites/number_balls/%s.png" % num)
-	if velocity.x < 0:
-		ball.flip_v = true
-		ball.flip_h = true
-	position += velocity * SPEED * delta
-	traveled_distance += SPEED * delta
-	if traveled_distance > RANGE:
+	self.ball.texture = load("res://assets/sprites/number_balls/%s.png" % self.num)
+	if self.velocity.x < 0:
+		self.ball.flip_v = true
+		self.ball.flip_h = true
+	self.position += self.velocity * SPEED * delta
+	self.traveled_distance += SPEED * delta
+	if self.traveled_distance > RANGE:
 		queue_free()
 
 

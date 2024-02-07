@@ -6,8 +6,6 @@ signal mana_updated(value: int)
 
 signal did_fire(ball: int, direction: float, location: Vector2)
 
-const MAX_WALLS := 3
-
 ## You can guess.
 @export var speed: int = 200
 
@@ -41,88 +39,91 @@ var times := 1.0
 ## Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var walls := MAX_WALLS
+var walls := max_walls
 
 @onready var wizard_sprite: Sprite2D = %WizardSprite
+
+static var max_walls := 3
 
 
 func _process(_delta: float) -> void:
 	firing()
-	if score >= 100 * times:  # Game Over!!
-		times += 0.5
-		mana += 1
-	if mana <= 0:
-		get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
+	if self.score >= 100 * self.times:  # Game Over!!
+		self.times += 0.5
+		self.mana += 1
+	if self.mana <= 0:
+		self.get_tree().change_scene_to_file("res://game/menus/game_over/game_over.tscn")
 
 
 func _physics_process(delta: float) -> void:
-	# Add  gravity.
-	if not is_on_floor():
-		velocity.y += gravity * (delta / (floaty / 100))
+	# Add gravity.
+	if not self.is_on_floor():
+		self.velocity.y += self.gravity * (delta / (self.floaty / 100))
 
 	# Handle jumping.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and self.is_on_floor():
 		velocity.y = jump_velocity
-	if Input.is_action_just_pressed("jump") and is_on_wall_only() and walls > 0:
-		velocity.y = jump_velocity
-		velocity.x = -400 if wizard_sprite.flip_h else 400
-		walls -= 1
-	if Input.is_action_just_released("jump") and not is_on_floor() and not velocity.y > 0:
-		velocity.y = move_toward(velocity.y, 0, feather + (abs(velocity.y / 2)))
+	if Input.is_action_just_pressed("jump") and self.is_on_wall_only() and self.walls > 0:
+		self.velocity.y = self.ump_velocity
+		self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
+		self.walls -= 1
+	if Input.is_action_just_released("jump") and not self.is_on_floor() and not self.velocity.y > 0:
+		self.velocity.y = move_toward(self.velocity.y, 0, self.feather + abs(self.velocity.y / 2))
 
 	if is_on_floor():
-		walls = MAX_WALLS
+		self.walls = max_walls
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		# This basically just speeds up by ramping.
-		velocity.x = move_toward(
-			velocity.x, direction * speed, ramping * (1 if is_on_floor() else 2)
+		self.velocity.x = move_toward(
+			self.velocity.x, direction * self.speed, self.ramping * (1 if self.is_on_floor() else 2)
 		)
 		if direction == 1:
 			wizard_sprite.flip_h = true
 		elif direction == -1:
-			wizard_sprite.flip_h = false
+			self.wizard_sprite.flip_h = false
 	else:
 		# Slow the wizard down with friction.
-		velocity.x = move_toward(velocity.x, 0, friction)
+		self.velocity.x = move_toward(velocity.x, 0, friction)
 
-	move_and_slide()
+	self.move_and_slide()
 
 
 func firing():
 	if Input.is_action_just_pressed("zero"):
-		fire(0)
+		self.fire(0)
 	elif Input.is_action_just_pressed("one"):
-		fire(1)
+		self.fire(1)
 	elif Input.is_action_just_pressed("two"):
-		fire(2)
+		self.fire(2)
 	elif Input.is_action_just_pressed("three"):
-		fire(3)
+		self.fire(3)
 	elif Input.is_action_just_pressed("four"):
-		fire(4)
+		self.fire(4)
 	elif Input.is_action_just_pressed("five"):
-		fire(5)
+		self.fire(5)
 	elif Input.is_action_just_pressed("six"):
-		fire(6)
+		self.fire(6)
 	elif Input.is_action_just_pressed("seven"):
-		fire(7)
+		self.fire(7)
 	elif Input.is_action_just_pressed("eight"):
-		fire(8)
+		self.fire(8)
 	elif Input.is_action_just_pressed("nine"):
-		fire(9)
+		self.fire(9)
 
 
 func fire(num: int) -> void:
-	did_fire.emit(num, global_position.angle_to_point(get_global_mouse_position()), global_position)
+	var angle := self.global_position.angle_to_point(get_global_mouse_position())
+	self.did_fire.emit(num, angle, self.global_position)
 
 
 func _on_rock_hit(points: int) -> void:
 	if points > 0:
-		score += points
+		self.score += points
 	else:
-		mana += points
+		self.mana += points
 
 
 func _on_anti_math_juice_poisoned(amount: int) -> void:
-	mana -= amount
+	self.mana -= amount

@@ -10,13 +10,13 @@ extends CanvasLayer
 		score = value
 		score_label.text = "Score: %s" % score
 
-@onready var mana_label: Label = $ManaLabel
-@onready var score_label: Label = $ScoreLabel
+@onready var mana_label: Label = %ManaLabel
+@onready var score_label: Label = %ScoreLabel
 
 
 func _on_wizard_score_updated(value: int) -> void:
-	score = value
+	self.score = value
 
 
 func _on_wizard_mana_updated(value: int) -> void:
-	mana = value
+	self.mana = value
