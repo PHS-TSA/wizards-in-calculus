@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eui6qcwl2wdl"]
+[gd_scene load_steps=9 format=3 uid="uid://eui6qcwl2wdl"]
 
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_6m48w"]
 [ext_resource type="Script" path="res://game/levels/level.gd" id="1_bwyiu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="3_ay7so"]
 [ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up.tscn" id="5_d0k0g"]
 [ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://game/scenes/anti_math_juice/anti_math_juice.tscn" id="5_dhd8p"]
+[ext_resource type="PackedScene" uid="uid://yv4sk050d4ke" path="res://game/spawnables/quick_math/quick_math.tscn" id="7_nlayy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lff1f"]
 
@@ -91,6 +92,9 @@ answer = 2
 question = "1+1"
 
 [node name="HUD" parent="." instance=ExtResource("5_d0k0g")]
+
+[node name="QuickMathBall" parent="." instance=ExtResource("7_nlayy")]
+position = Vector2(357, 246)
 
 [connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]

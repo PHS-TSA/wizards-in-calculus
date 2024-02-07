@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://yv4sk050d4ke"]
+
+[ext_resource type="Script" path="res://game/spawnables/quick_math/quick_math.gd" id="1_hkb8p"]
+[ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://assets/icon.svg" id="2_me8m8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q36na"]
+radius = 3.0
+
+[node name="QuickMathBall" type="StaticBody2D"]
+scale = Vector2(4.01368, 4.00665)
+collision_layer = 2
+script = ExtResource("1_hkb8p")
+answer = 2
+question = "1+1"
+
+[node name="QuickMathSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.045779, 0.045779)
+texture = ExtResource("2_me8m8")
+
+[node name="QuickMathLabel" type="Label" parent="QuickMathSprite"]
+unique_name_in_owner = true
+offset_left = -77.7275
+offset_top = -47.6516
+offset_right = 79.2725
+offset_bottom = 51.3484
+theme_override_font_sizes/font_size = 50
+text = "TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q36na")
+
+[node name="TeleportPosition" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -5.66245)

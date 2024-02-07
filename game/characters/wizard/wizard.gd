@@ -60,8 +60,15 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add gravity.
-	if not self.is_on_floor():
-		self.velocity.y += self.gravity * (delta / (self.floaty / 100))
+	if not is_on_floor():
+		if (
+			is_on_wall_only()
+			and (velocity.y > 0)
+			and (Input.is_action_pressed("left") or Input.is_action_pressed("right"))
+		):  # wall sliding
+			velocity.y += (gravity * (delta / (floaty / 100))) / 3
+		else:  #normal free fall
+			velocity.y += gravity * (delta / (floaty / 100))
 
 	# Handle jumping.
 	if Input.is_action_just_pressed("jump") and self.is_on_floor():

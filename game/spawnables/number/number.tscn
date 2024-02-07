@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgdt3twjqao7b" path="res://assets/sprites/number_balls/1.png" id="2_7id44"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sd8cv"]
-radius = 9.82594
+radius = 7.01853
 
 [node name="NumberBall" type="Area2D"]
 collision_mask = 2
