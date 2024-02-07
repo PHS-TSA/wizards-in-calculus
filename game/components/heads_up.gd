@@ -15,8 +15,8 @@ extends CanvasLayer
 
 
 func _on_wizard_score_updated(value: int) -> void:
-	score = value
+	self.score = value
 
 
 func _on_wizard_mana_updated(value: int) -> void:
-	mana = value
+	self.mana = value

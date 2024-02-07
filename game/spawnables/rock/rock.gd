@@ -10,7 +10,7 @@ signal hit(points: int)
 
 
 func _ready() -> void:
-	label.text = question
+	self.label.text = question
 
 
 func take_damage(value: int) -> void:
