@@ -32,6 +32,12 @@ position = Vector2(574, 536)
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
+limit_left = -180
+limit_top = -300
+limit_right = 2700
+limit_bottom = 730
+limit_smoothed = true
+editor_draw_limits = true
 
 [node name="Rock" parent="." instance=ExtResource("3_ay7so")]
 position = Vector2(851, 503)
