@@ -108,3 +108,4 @@ position = Vector2(357, 246)
 [connection signal="poisoned" from="AntiMathJuicePool" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="AntiMathJuicePool" to="Wizard" method="_on_anti_math_juice_poisoned"]
 [connection signal="hit" from="Rock2" to="Wizard" method="_on_rock_hit"]
+[connection signal="teleported" from="QuickMathBall" to="Wizard" method="_on_quick_math_ball_teleported"]

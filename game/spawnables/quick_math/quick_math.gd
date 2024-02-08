@@ -1,11 +1,12 @@
 class_name QuickMath
 extends StaticBody2D
 
+signal teleported(location: Vector2)
+
 @export var answer: int
 @export var question: String = "N/A"
 
 @onready var quick_math_label: Label = %QuickMathLabel
-@onready var wizard: Wizard = get_parent().get_node("Wizard")
 @onready var teleport_position: Marker2D = %TeleportPosition
 
 
@@ -16,6 +17,4 @@ func _ready() -> void:
 
 func take_damage(value: int) -> void:
 	if value == answer:
-		self.wizard.position = self.teleport_position.global_position
-		self.wizard.walls = self.wizard.max_walls
-		self.wizard.velocity.y = 0
+		teleported.emit(self.teleport_position.global_position)
