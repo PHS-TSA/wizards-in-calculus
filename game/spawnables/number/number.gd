@@ -28,4 +28,4 @@ func _on_body_entered(body: Node2D) -> void:
 		rock.take_damage(num)
 	elif body is QuickMath:
 		var teleporter: QuickMath = body
-		teleporter.take_damage(num)
+		teleporter.teleport(num)

@@ -138,3 +138,9 @@ func _on_rock_hit(points: int) -> void:
 
 func _on_anti_math_juice_poisoned(amount: int) -> void:
 	self.mana -= amount
+
+
+func _on_quick_math_ball_teleported(location: Vector2) -> void:
+	self.position = location
+	self.walls = max_walls
+	self.velocity.y = 0
