@@ -60,19 +60,20 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Add gravity.
-	if not is_on_floor():
+	if not self.is_on_floor():
 		if (
-			is_on_wall_only()
-			and (velocity.y > 0)
+			(self.is_on_wall_only() and self.velocity.y > 0)
 			and (Input.is_action_pressed("left") or Input.is_action_pressed("right"))
-		):  # wall sliding
-			velocity.y += (gravity * (delta / (floaty / 100))) / 3
-		else:  #normal free fall
-			velocity.y += gravity * (delta / (floaty / 100))
+		):
+			# wall sliding
+			self.velocity.y += (self.gravity * (delta / (self.floaty / 100))) / 3
+		else:
+			# normal free fall
+			self.velocity.y += self.gravity * (delta / (self.floaty / 100))
 
 	# Handle jumping.
 	if Input.is_action_just_pressed("jump") and self.is_on_floor():
-		velocity.y = jump_velocity
+		self.velocity.y = self.jump_velocity
 	if Input.is_action_just_pressed("jump") and self.is_on_wall_only() and self.walls > 0:
 		self.velocity.y = self.jump_velocity
 		self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
@@ -80,8 +81,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("jump") and not self.is_on_floor() and not self.velocity.y > 0:
 		self.velocity.y = move_toward(self.velocity.y, 0, self.feather + absf(self.velocity.y / 2))
 
-	if is_on_floor():
-		self.walls = max_walls
+	if self.is_on_floor():
+		self.walls = self.max_walls
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
