@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://game/scenes/anti_math_juice/anti_math_juice.tscn" id="5_76m1h"]
 [ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://game/scenes/checkpoint/checkpoint.tscn" id="6_newtr"]
 [ext_resource type="PackedScene" uid="uid://bkxaf8d4e86ux" path="res://game/scenes/portal/portal.tscn" id="7_cw3s8"]
-[ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up.tscn" id="8_c3tvq"]
+[ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up/heads_up.tscn" id="8_c3tvq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3o51e"]
 font = ExtResource("3_l5147")

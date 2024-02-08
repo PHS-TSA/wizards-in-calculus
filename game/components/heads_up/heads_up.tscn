@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci4k3eyocn7g2"]
 
 [ext_resource type="StyleBox" uid="uid://c2i2mjrwx7e" path="res://game/styles/hud_box.tres" id="1_4w0lt"]
-[ext_resource type="Script" path="res://game/components/heads_up.gd" id="1_ieho2"]
+[ext_resource type="Script" path="res://game/components/heads_up/heads_up.gd" id="1_ieho2"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ieho2")

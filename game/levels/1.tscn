@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://game/levels/level.gd" id="1_bwyiu"]
 [ext_resource type="PackedScene" uid="uid://bqfj4dlx64q0r" path="res://game/characters/wizard/wizard.tscn" id="2_jk3qu"]
 [ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="3_ay7so"]
-[ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up.tscn" id="5_d0k0g"]
+[ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up/heads_up.tscn" id="5_d0k0g"]
 [ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://game/scenes/anti_math_juice/anti_math_juice.tscn" id="5_dhd8p"]
 [ext_resource type="PackedScene" uid="uid://yv4sk050d4ke" path="res://game/spawnables/quick_math/quick_math.tscn" id="7_nlayy"]
 
