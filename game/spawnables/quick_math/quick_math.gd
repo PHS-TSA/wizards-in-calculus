@@ -15,6 +15,6 @@ func _ready() -> void:
 	self.quick_math_label.text = question
 
 
-func take_damage(value: int) -> void:
+func teleport(value: int) -> void:
 	if value == answer:
 		teleported.emit(self.teleport_position.global_position)
