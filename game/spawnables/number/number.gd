@@ -25,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 	queue_free()
 	if body is Rock:
 		var rock: Rock = body  # GDScript doesn't have flow typing.
-		rock.take_damage(num)
+		rock.take_damage(self.num)
 	elif body is QuickMath:
 		var teleporter: QuickMath = body
-		teleporter.teleport(num)
+		teleporter.teleport(self.num)

@@ -17,11 +17,11 @@ func _ready() -> void:
 func take_damage(value: int) -> void:
 	if value == answer:
 		queue_free()
-		hit.emit(
+		self.hit.emit(
 			randi_range(
 				(1 * (difficulty * 3)) if difficulty > 0 else 1,
 				(6 * difficulty) if difficulty > 0 else 2
 			)
 		)
 	else:
-		hit.emit(-1)
+		self.hit.emit(-1)

@@ -9,7 +9,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		"change_scene_to_file",
 		(
 			"res://game/levels/tutorial.tscn"
-			if (self.level == 0)
-			else ("res://game/levels/%s.tscn" % self.level)
+			if self.level == 0
+			else "res://game/levels/%s.tscn" % self.level
 		)
 	)

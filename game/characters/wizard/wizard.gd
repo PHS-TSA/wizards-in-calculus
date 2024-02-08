@@ -28,12 +28,12 @@ signal did_fire(ball: int, direction: float, location: Vector2)
 var score := 0:
 	set(value):
 		score = value
-		score_updated.emit(score)
+		self.score_updated.emit(score)
 
 var mana := 20:
 	set(value):
 		mana = value
-		mana_updated.emit(mana)
+		self.mana_updated.emit(mana)
 
 var times := 1.0
 
@@ -72,13 +72,17 @@ func _physics_process(delta: float) -> void:
 			self.velocity.y += self.gravity * (delta / (self.floaty / 100))
 
 	# Handle jumping.
-	if Input.is_action_just_pressed("jump") and self.is_on_floor():
-		self.velocity.y = self.jump_velocity
-	if Input.is_action_just_pressed("jump") and self.is_on_wall_only() and self.walls > 0:
-		self.velocity.y = self.jump_velocity
-		self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
-		self.walls -= 1
-	if Input.is_action_just_released("jump") and not self.is_on_floor() and not self.velocity.y > 0:
+	if Input.is_action_just_pressed("jump"):
+		if self.is_on_floor():
+			self.velocity.y = self.jump_velocity
+		elif self.is_on_wall_only() and self.walls > 0:
+			self.velocity.y = self.jump_velocity
+			self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
+			self.walls -= 1
+	elif (
+		Input.is_action_just_released("jump")
+		and (not self.is_on_floor() and not self.velocity.y > 0)
+	):
 		self.velocity.y = move_toward(self.velocity.y, 0, self.feather + absf(self.velocity.y / 2))
 
 	if self.is_on_floor():
@@ -91,7 +95,7 @@ func _physics_process(delta: float) -> void:
 			self.velocity.x, direction * self.speed, self.ramping * (1 if self.is_on_floor() else 2)
 		)
 		if direction == 1:
-			wizard_sprite.flip_h = true
+			self.wizard_sprite.flip_h = true
 		elif direction == -1:
 			self.wizard_sprite.flip_h = false
 	else:
@@ -142,5 +146,5 @@ func _on_anti_math_juice_poisoned(amount: int) -> void:
 
 func _on_quick_math_ball_teleported(location: Vector2) -> void:
 	self.position = location
-	self.walls = max_walls
+	self.walls = self.max_walls
 	self.velocity.y = 0

@@ -17,4 +17,4 @@ func _ready() -> void:
 
 func teleport(value: int) -> void:
 	if value == answer:
-		teleported.emit(self.teleport_position.global_position)
+		self.teleported.emit(self.teleport_position.global_position)
