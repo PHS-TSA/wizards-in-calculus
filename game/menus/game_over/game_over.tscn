@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ey05j10wdwyc"]
 
 [ext_resource type="Texture2D" uid="uid://dylon3a25hyr1" path="res://assets/sprites/menu.webp" id="1_3kk2o"]
+[ext_resource type="Script" path="res://game/menus/game_over/game_over.gd" id="1_unnjq"]
 [ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="2_6q66m"]
-[ext_resource type="Script" path="res://game/menus/game_over/restart_button.gd" id="3_swyii"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgdev"]
 font = ExtResource("2_6q66m")
@@ -19,6 +19,7 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
 
 [node name="GameOver" type="Node2D"]
+script = ExtResource("1_unnjq")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_3kk2o")
@@ -52,4 +53,5 @@ theme_override_fonts/font = ExtResource("2_6q66m")
 theme_override_font_sizes/font_size = 42
 action_mode = 0
 text = "RESTART"
-script = ExtResource("3_swyii")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
