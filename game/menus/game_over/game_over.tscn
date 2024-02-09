@@ -54,4 +54,4 @@ theme_override_font_sizes/font_size = 42
 action_mode = 0
 text = "RESTART"
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

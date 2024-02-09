@@ -17,7 +17,7 @@ func _on_scene_changed(next_scene_name: String) -> void:
 	var Next: PackedScene = load("res://game/%s.tscn" % next_scene_name)
 	next_scene = Next.instantiate()
 	next_scene.z_index = -1000
-	add_child(next_scene)
+	add_child.call_deferred(next_scene)
 	animator.play("fade_in")
 	var _status := next_scene.connect("scene_changed", _on_scene_changed)
 

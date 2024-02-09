@@ -195,3 +195,5 @@ position = Vector2(585, 100)
 [connection signal="poisoned" from="AntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="LargeAntiMathJuice" to="." method="_on_anti_math_juice_poisoned"]
 [connection signal="poisoned" from="LargeAntiMathJuice" to="Wizard" method="_on_anti_math_juice_poisoned"]
+[connection signal="scene_changed" from="MainPortal" to="." method="_on_portal_scene_changed"]
+[connection signal="scene_changed" from="SecretPortal" to="." method="_on_portal_scene_changed"]

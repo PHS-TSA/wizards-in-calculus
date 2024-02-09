@@ -27,6 +27,8 @@ signal game_over
 ## Slow down, kid!
 @export var friction: int = 25
 
+var is_game_over: bool = false
+
 var score := 0:
 	set(value):
 		score = value
@@ -36,6 +38,11 @@ var mana := 20:
 	set(value):
 		mana = value
 		self.mana_updated.emit(mana)
+
+		# GAME OVER!!
+		if self.mana <= 0 && not is_game_over:
+			game_over.emit()
+			is_game_over = true
 
 var times := 1.0
 
@@ -58,10 +65,6 @@ func _process(_delta: float) -> void:
 		self.times += 0.5
 		# Add a mana
 		self.mana += 1
-
-	# GAME OVER!!
-	if self.mana <= 0:
-		game_over.emit()
 
 
 func _physics_process(delta: float) -> void:
