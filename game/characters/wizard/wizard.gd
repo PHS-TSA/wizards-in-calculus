@@ -7,6 +7,8 @@ signal mana_updated(value: int)
 
 signal did_fire(ball: int, direction: float, location: Vector2)
 
+signal game_over
+
 ## You can guess.
 @export var speed: int = 200
 
@@ -49,13 +51,17 @@ static var max_walls := 3
 
 func _process(_delta: float) -> void:
 	firing()
-	if self.score >= 100 * self.times:  # Game Over!!
+
+	# Cash in on mana at 100 points.
+	if self.score >= 100 * self.times:
+		# Another 50 before next mana regain.
 		self.times += 0.5
+		# Add a mana
 		self.mana += 1
+
+	# GAME OVER!!
 	if self.mana <= 0:
-		var _new_tree := self.get_tree().change_scene_to_file(
-			"res://game/menus/game_over/game_over.tscn"
-		)
+		game_over.emit()
 
 
 func _physics_process(delta: float) -> void:

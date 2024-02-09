@@ -1,6 +1,8 @@
 class_name Level
 extends Node2D
 
+signal scene_changed(next_scene_name: String)
+
 const Ball := preload("res://game/spawnables/number/number.tscn")
 
 @onready var wizard: Wizard = %Wizard
@@ -19,3 +21,7 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 
 func _on_anti_math_juice_poisoned(_amount: int) -> void:
 	self.wizard.position = self.spawn.global_position
+
+
+func _on_wizard_game_over() -> void:
+	scene_changed.emit("menus/game_over")

@@ -186,6 +186,7 @@ position = Vector2(585, 100)
 [node name="HUD" parent="." instance=ExtResource("8_c3tvq")]
 
 [connection signal="did_fire" from="Wizard" to="." method="_on_wizard_did_fire"]
+[connection signal="game_over" from="Wizard" to="." method="_on_wizard_game_over"]
 [connection signal="mana_updated" from="Wizard" to="HUD" method="_on_wizard_mana_updated"]
 [connection signal="score_updated" from="Wizard" to="HUD" method="_on_wizard_score_updated"]
 [connection signal="hit" from="Rock" to="Wizard" method="_on_rock_hit"]
