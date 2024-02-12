@@ -1,13 +1,13 @@
 class_name QuickMath
 extends StaticBody2D
 
-signal teleported(location: Vector2)
-
 @export var answer: int
 @export var question: String = "N/A"
 
 @onready var quick_math_label: Label = %QuickMathLabel
 @onready var teleport_position: Marker2D = %TeleportPosition
+
+@onready var wizard: Wizard = self.get_parent().get_node("Wizard")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,4 +17,5 @@ func _ready() -> void:
 
 func teleport(value: int) -> void:
 	if value == answer:
-		self.teleported.emit(self.teleport_position.global_position)
+		# gdlint:ignore = private-method-call
+		wizard._on_quick_math_ball_teleported(self.teleport_position.global_position)

@@ -1,12 +1,6 @@
 class_name Wizard
 extends CharacterBody2D
 
-signal score_updated(value: int)
-
-signal mana_updated(value: int)
-
-signal did_fire(ball: int, direction: float, location: Vector2)
-
 ## You can guess.
 @export var speed: int = 200
 
@@ -25,15 +19,26 @@ signal did_fire(ball: int, direction: float, location: Vector2)
 ## Slow down, kid!
 @export var friction: int = 25
 
+var is_game_over := false
+
 var score := 0:
 	set(value):
 		score = value
-		self.score_updated.emit(score)
+		# gdlint:ignore = private-method-call
+		hud._on_wizard_score_updated(score)
 
 var mana := 20:
 	set(value):
 		mana = value
-		self.mana_updated.emit(mana)
+		# gdlint:ignore = private-method-call
+		hud._on_wizard_mana_updated(mana)
+
+		# GAME OVER!!
+		if self.mana <= 0 && not is_game_over:
+			var _new_tree := self.get_tree().change_scene_to_file(
+				"res://game/menus/game_over/game_over.tscn"
+			)
+			is_game_over = true
 
 var times := 1.0
 
@@ -43,6 +48,8 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var walls := max_walls
 
 @onready var wizard_sprite: Sprite2D = %WizardSprite
+@onready var hud: HeadsUp = self.get_parent().get_node("HUD") as HeadsUp
+@onready var spawn: Marker2D = self.get_parent().get_node("Spawn") as Marker2D
 
 static var max_walls := 3
 
@@ -130,7 +137,8 @@ func firing() -> void:
 
 func fire(num: int) -> void:
 	var angle := self.global_position.angle_to_point(get_global_mouse_position())
-	self.did_fire.emit(num, angle, self.global_position)
+	# gdlint:ignore = private-method-call
+	(self.get_parent() as Level)._on_wizard_did_fire(num, angle, self.global_position)
 
 
 func _on_rock_hit(points: int) -> void:
@@ -142,6 +150,7 @@ func _on_rock_hit(points: int) -> void:
 
 func _on_anti_math_juice_poisoned(amount: int) -> void:
 	self.mana -= amount
+	self.position = spawn.position
 
 
 func _on_quick_math_ball_teleported(location: Vector2) -> void:

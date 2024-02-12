@@ -1,8 +1,9 @@
 class_name AntiMathJuice
 extends Area2D
 
-signal poisoned(amount: int)
+@onready var wizard: Wizard = self.get_parent().get_node("Wizard")
 
 
 func _on_body_exited(_body: Node2D) -> void:
-	self.poisoned.emit(5)
+	# gdlint:ignore = private-method-call
+	wizard._on_anti_math_juice_poisoned(5)
