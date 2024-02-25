@@ -1,12 +1,18 @@
 {
+  "[gdscript]": {
+    "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter"
+  },
   "deno.enablePaths": ["server/"],
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
-  "cSpell.words": ["elif", "onready", "spawnables", "teleporter", "tscn"],
-  "cSpell.enableFiletypes": ["gdscript"],
   "editor.codeActionsOnSave": {
     "quickfix.biome": "always",
     "source.organizeImports.biome": "always"
-  }
+  },
+  "files.associations": {
+    "gdlintrc": "yaml"
+  },
+  "cSpell.words": ["elif", "onready", "spawnables", "teleporter", "tscn"],
+  "cSpell.enableFiletypes": ["gdscript"]
 }

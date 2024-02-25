@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "razoric.gdscript-toolkit-formatter",
+    "eddiedover.gdscript-formatter-linter",
+    "geequlim.godot-tools"
+  ]
+}
