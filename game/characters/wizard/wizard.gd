@@ -47,9 +47,10 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var walls := max_walls
 
+@onready var level: Level = self.get_parent()
 @onready var wizard_sprite: Sprite2D = %WizardSprite
-@onready var hud: HeadsUp = self.get_parent().get_node("HUD") as HeadsUp
-@onready var spawn: Marker2D = self.get_parent().get_node("Spawn") as Marker2D
+@onready var hud: HeadsUp = level.get_node("HUD")
+@onready var spawn: Marker2D = level.get_node("Spawn")
 
 static var max_walls := 3
 
@@ -138,7 +139,7 @@ func firing() -> void:
 func fire(num: int) -> void:
 	var angle := self.global_position.angle_to_point(get_global_mouse_position())
 	# gdlint:ignore = private-method-call
-	(self.get_parent() as Level)._on_wizard_did_fire(num, angle, self.global_position)
+	level._on_wizard_did_fire(num, angle, self.global_position)
 
 
 func _on_rock_hit(points: int) -> void:
