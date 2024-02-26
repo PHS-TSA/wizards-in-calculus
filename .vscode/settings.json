@@ -1,6 +1,9 @@
 {
   "[gdscript]": {
-    "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter"
+    "editor.defaultFormatter": "EddieDover.gdscript-formatter-linter",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false
   },
   "deno.enablePaths": ["server/"],
   "[typescript]": {
