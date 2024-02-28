@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbbhtn64lle11"]
 
 [ext_resource type="Script" path="res://game/spawnables/rock/rock.gd" id="1_iipfa"]
-[ext_resource type="Texture2D" uid="uid://cb1tmbd381e4h" path="res://assets/sprites/tree.png" id="2_yq05d"]
+[ext_resource type="Texture2D" uid="uid://b3ndk1670c72n" path="res://assets/sprites/tree.png" id="2_yq05d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbncs"]
 line_spacing = 0.0
