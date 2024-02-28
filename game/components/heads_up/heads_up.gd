@@ -15,9 +15,9 @@ extends CanvasLayer
 @onready var score_label: Label = %ScoreLabel
 
 
-func _on_wizard_score_updated(value: int) -> void:
+func on_wizard_score_updated(value: int) -> void:
 	self.score = value
 
 
-func _on_wizard_mana_updated(value: int) -> void:
+func on_wizard_mana_updated(value: int) -> void:
 	self.mana = value

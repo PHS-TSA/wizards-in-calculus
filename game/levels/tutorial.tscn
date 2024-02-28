@@ -188,3 +188,4 @@ position = Vector2(-22, 398)
 scale = Vector2(2, 2)
 
 [node name="HUD" parent="." instance=ExtResource("8_c3tvq")]
+unique_name_in_owner = true
