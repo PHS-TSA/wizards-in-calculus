@@ -15,7 +15,6 @@ question = "1+1"
 
 [node name="QuickMathSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-scale = Vector2(0.045779, 0.045779)
 texture = ExtResource("2_me8m8")
 
 [node name="QuickMathLabel" type="Label" parent="QuickMathSprite"]
@@ -30,10 +29,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_q36na")
-
 [node name="TeleportPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -5.66245)
+position = Vector2(0.249148, -62.8954)
 gizmo_extents = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(22, 22)
+shape = SubResource("CircleShape2D_q36na")
