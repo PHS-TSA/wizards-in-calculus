@@ -1,4 +1,4 @@
-class_name StartButton
+class_name TutorialButton
 extends Button
 
 
