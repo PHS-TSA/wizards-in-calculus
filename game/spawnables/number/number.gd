@@ -29,4 +29,3 @@ func _on_body_entered(body: Node2D) -> void:
 	elif body is QuickMath:
 		var teleporter: QuickMath = body
 		teleporter.teleport(self.num)
-		

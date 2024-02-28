@@ -19,9 +19,8 @@ extends CharacterBody2D
 ## Slow down, kid!
 @export var friction: int = 25
 
-
 ## allows jump without walls or floor
-var jump = false
+var jump := false
 
 var is_game_over := false
 

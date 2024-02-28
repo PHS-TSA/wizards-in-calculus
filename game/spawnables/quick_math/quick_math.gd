@@ -5,6 +5,7 @@ extends StaticBody2D
 @export var question: String = "N/A"
 
 @onready var quick_math_label: Label = %QuickMathLabel
+@onready var quick_math_sprite: Sprite2D = %QuickMathSprite
 @onready var teleport_position: Marker2D = %TeleportPosition
 
 @onready var wizard: Wizard = self.get_parent().get_node("Wizard")
@@ -13,7 +14,7 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.quick_math_label.text = ""
-	%QuickMathSprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
+	quick_math_sprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
 
 
 func teleport(value: int) -> void:
@@ -25,4 +26,3 @@ func teleport(value: int) -> void:
 		wizard.mana -= 1
 	else:
 		wizard.mana -= 2
-
