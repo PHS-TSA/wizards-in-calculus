@@ -1,6 +1,8 @@
 class_name QuickMath
 extends StaticBody2D
 
+signal teleported(position: Vector2)
+
 @export var answer: int
 @export var question: String = "N/A"
 
@@ -8,21 +10,13 @@ extends StaticBody2D
 @onready var quick_math_sprite: Sprite2D = %QuickMathSprite
 @onready var teleport_position: Marker2D = %TeleportPosition
 
-@onready var wizard: Wizard = self.get_parent().get_node("Wizard")
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.quick_math_label.text = ""
-	quick_math_sprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
+	self.quick_math_label.text = self.question
+	self.quick_math_sprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
+	self.add_to_group("quick_maths")
 
 
 func teleport(value: int) -> void:
-	if value == answer:
-		# gdlint:ignore = private-method-call
-		wizard._on_quick_math_ball_teleported(self.teleport_position.global_position)
-		wizard.walls = wizard.max_walls
-		wizard.jump = true
-		wizard.mana -= 1
-	else:
-		wizard.mana -= 2
+	self.teleported.emit(self.teleport_position.global_position, value == self.answer)
