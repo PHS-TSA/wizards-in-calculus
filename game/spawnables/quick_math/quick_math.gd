@@ -12,10 +12,17 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.quick_math_label.text = question
+	self.quick_math_label.text = ""
+	%QuickMathSprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
 
 
 func teleport(value: int) -> void:
 	if value == answer:
 		# gdlint:ignore = private-method-call
 		wizard._on_quick_math_ball_teleported(self.teleport_position.global_position)
+		wizard.walls = wizard.max_walls
+		wizard.jump = true
+		wizard.mana -= 1
+	else:
+		wizard.mana -= 2
+

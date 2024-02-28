@@ -5,8 +5,7 @@ extends Area2D
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	self.get_tree().call_deferred(
-		"change_scene_to_file",
+	self.get_tree().change_scene_to_file.call_deferred(
 		(
 			"res://game/levels/tutorial.tscn"
 			if self.level == 0

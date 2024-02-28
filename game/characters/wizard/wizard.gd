@@ -19,6 +19,10 @@ extends CharacterBody2D
 ## Slow down, kid!
 @export var friction: int = 25
 
+
+## allows jump without walls or floor
+var jump = false
+
 var is_game_over := false
 
 var score := 0:
@@ -87,6 +91,9 @@ func _physics_process(delta: float) -> void:
 			self.velocity.y = self.jump_velocity
 			self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
 			self.walls -= 1
+		elif self.jump == true:
+			self.velocity.y = self.jump_velocity * 1.2
+			self.jump = false
 	elif (
 		Input.is_action_just_released("jump")
 		and (not self.is_on_floor() and not self.velocity.y > 0)
@@ -95,6 +102,9 @@ func _physics_process(delta: float) -> void:
 
 	if self.is_on_floor():
 		self.walls = self.max_walls
+		self.jump = false
+	if self.is_on_wall_only():
+		self.jump = false
 
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -158,3 +168,5 @@ func _on_quick_math_ball_teleported(location: Vector2) -> void:
 	self.position = location
 	self.walls = self.max_walls
 	self.velocity.y = 0
+	await get_tree().create_timer(0.1).timeout
+	self.jump = true

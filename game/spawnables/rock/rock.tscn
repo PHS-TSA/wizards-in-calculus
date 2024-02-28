@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwjd2021rogmh" path="res://assets/sprites/rock.png" id="2_dtg15"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sbncs"]
-font_size = 80
+font_size = 70
 
 [node name="Rock" type="StaticBody2D"]
 collision_layer = 3
@@ -21,10 +21,10 @@ texture = ExtResource("2_dtg15")
 
 [node name="MathLabel" type="Label" parent="RockSprite"]
 unique_name_in_owner = true
-offset_left = -116.856
-offset_top = -70.1133
-offset_right = 124.144
-offset_bottom = 69.8867
+offset_left = -141.0
+offset_top = -94.0
+offset_right = 165.0
+offset_bottom = 94.0
 theme_override_font_sizes/font_size = 100
 text = "PLAY"
 label_settings = SubResource("LabelSettings_sbncs")
