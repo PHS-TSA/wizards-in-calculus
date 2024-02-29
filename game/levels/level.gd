@@ -19,3 +19,10 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 
 func _on_anti_math_juice_poisoned(_amount: int) -> void:
 	self.wizard.position = self.spawn.global_position
+
+
+#Starts lava
+func _on_area_2d_area_entered(area):
+	%RisingAntiMathJuice.x = 795
+	%RisingAntiMathJuice.y = -702
+	pass # Replace with function body.

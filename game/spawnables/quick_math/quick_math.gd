@@ -12,9 +12,14 @@ extends StaticBody2D
 
 
 # Called when the node enters the scene tree for the first time.
+
+#generate random num
+
+
 func _ready() -> void:
-	self.quick_math_label.text = ""
-	quick_math_sprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
+	#var num: int = randi() % 9
+	self.quick_math_label.text = question
+	quick_math_sprite.texture = load("res://assets/sprites/number_balls_blank/1b.png")
 
 
 func teleport(value: int) -> void:

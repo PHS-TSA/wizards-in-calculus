@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://yv4sk050d4ke"]
 
 [ext_resource type="Script" path="res://game/spawnables/quick_math/quick_math.gd" id="1_hkb8p"]
-[ext_resource type="Texture2D" uid="uid://d3k2oa500c8da" path="res://assets/icon.svg" id="2_me8m8"]
+[ext_resource type="Texture2D" uid="uid://e0gth5rt351u" path="res://assets/sprites/number_balls_blank/1b.png" id="2_2qv32"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q36na"]
-radius = 3.0
+radius = 16.7625
 
 [node name="QuickMathBall" type="StaticBody2D"]
-scale = Vector2(4.01368, 4.00665)
+scale = Vector2(0.0330742, 0.0334045)
 collision_layer = 2
 script = ExtResource("1_hkb8p")
 answer = 2
@@ -15,15 +15,21 @@ question = "1+1"
 
 [node name="QuickMathSprite" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_me8m8")
+texture = ExtResource("2_2qv32")
 
 [node name="QuickMathLabel" type="Label" parent="QuickMathSprite"]
 unique_name_in_owner = true
-offset_left = -77.7275
-offset_top = -47.6516
-offset_right = 79.2725
-offset_bottom = 51.3484
-theme_override_font_sizes/font_size = 50
+anchors_preset = -1
+anchor_left = -0.00012928
+anchor_top = 0.000236618
+anchor_right = -0.00012928
+anchor_bottom = 0.000236618
+offset_left = -350.8
+offset_top = -166.473
+offset_right = -171.8
+offset_bottom = -56.4732
+scale = Vector2(4.0349, 3.38298)
+theme_override_font_sizes/font_size = 80
 text = "TEST"
 horizontal_alignment = 1
 vertical_alignment = 1
