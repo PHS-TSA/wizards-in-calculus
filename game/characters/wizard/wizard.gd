@@ -1,6 +1,10 @@
 class_name Wizard
 extends CharacterBody2D
 
+signal score_updated(score: int)
+signal mana_updated(mana: int)
+signal did_fire(num: int, angle: float, position: Vector2)
+
 ## You can guess.
 @export var speed: int = 200
 
@@ -19,29 +23,18 @@ extends CharacterBody2D
 ## Slow down, kid!
 @export var friction: int = 25
 
-## allows jump without walls or floor
+## Allow jumping without walls or floor.
 var jump := false
-
-var is_game_over := false
 
 var score := 0:
 	set(value):
 		score = value
-		# gdlint:ignore = private-method-call
-		hud._on_wizard_score_updated(score)
+		self.score_updated.emit(score)
 
 var mana := 20:
 	set(value):
 		mana = value
-		# gdlint:ignore = private-method-call
-		hud._on_wizard_mana_updated(mana)
-
-		# GAME OVER!!
-		if self.mana <= 0 && not is_game_over:
-			var _new_tree := self.get_tree().change_scene_to_file(
-				"res://game/menus/game_over/game_over.tscn"
-			)
-			is_game_over = true
+		self.mana_updated.emit(mana)
 
 var times := 1.0
 
@@ -50,10 +43,7 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var walls := max_walls
 
-@onready var level: Level = self.get_parent()
 @onready var wizard_sprite: Sprite2D = %WizardSprite
-@onready var hud: HeadsUp = level.get_node("HUD")
-@onready var spawn: Marker2D = level.get_node("Spawn")
 
 static var max_walls := 3
 
@@ -63,10 +53,6 @@ func _process(_delta: float) -> void:
 	if self.score >= 100 * self.times:  # Game Over!!
 		self.times += 0.5
 		self.mana += 1
-	if self.mana <= 0:
-		var _new_tree := self.get_tree().change_scene_to_file(
-			"res://game/menus/game_over/game_over.tscn"
-		)
 
 
 func _physics_process(delta: float) -> void:
@@ -90,7 +76,7 @@ func _physics_process(delta: float) -> void:
 			self.velocity.y = self.jump_velocity
 			self.velocity.x = -400 if self.wizard_sprite.flip_h else 400
 			self.walls -= 1
-		elif self.jump == true:
+		elif self.jump:
 			self.velocity.y = self.jump_velocity * 1.2
 			self.jump = false
 	elif (
@@ -147,25 +133,27 @@ func firing() -> void:
 
 func fire(num: int) -> void:
 	var angle := self.global_position.angle_to_point(get_global_mouse_position())
-	# gdlint:ignore = private-method-call
-	level._on_wizard_did_fire(num, angle, self.global_position)
+	self.did_fire.emit(num, angle, self.global_position)
 
 
-func _on_rock_hit(points: int) -> void:
-	if points > 0:
+func on_rock_hit(correct: bool, points: int) -> void:
+	if correct:
 		self.score += points
 	else:
-		self.mana += points
+		self.mana -= points
 
 
-func _on_anti_math_juice_poisoned(amount: int) -> void:
+func on_anti_math_juice_poisoned(amount: int) -> void:
 	self.mana -= amount
-	self.position = spawn.position
 
 
-func _on_quick_math_ball_teleported(location: Vector2) -> void:
-	self.position = location
-	self.walls = self.max_walls
-	self.velocity.y = 0
-	await get_tree().create_timer(0.1).timeout
-	self.jump = true
+func on_quick_math_ball_teleported(location: Vector2, correct: bool) -> void:
+	if correct:
+		self.position = location
+		self.walls = self.max_walls
+		self.velocity.y = 0
+		await get_tree().create_timer(0.1).timeout
+		self.jump = true
+		self.mana -= 1
+	else:
+		self.mana -= 2
