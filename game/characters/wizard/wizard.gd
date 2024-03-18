@@ -148,7 +148,7 @@ func firing() -> void:
 func fire(num: int) -> void:
 	var angle := self.global_position.angle_to_point(get_global_mouse_position())
 	# gdlint:ignore = private-method-call
-	level._on_wizard_did_fire(num, angle, self.global_position)
+	level._on_wizard_did_fire(num, angle, Vector2(self.global_position.x - 10 ,self.global_position.y))
 
 
 func _on_rock_hit(points: int) -> void:

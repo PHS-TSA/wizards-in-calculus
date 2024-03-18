@@ -28,6 +28,5 @@ func teleport(value: int) -> void:
 		wizard._on_quick_math_ball_teleported(self.teleport_position.global_position)
 		wizard.walls = wizard.max_walls
 		wizard.jump = true
-		wizard.mana -= 1
 	else:
 		wizard.mana -= 2

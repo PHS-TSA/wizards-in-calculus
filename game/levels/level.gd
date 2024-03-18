@@ -20,9 +20,13 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 func _on_anti_math_juice_poisoned(_amount: int) -> void:
 	self.wizard.position = self.spawn.global_position
 
-
 #Starts lava
-func _on_area_2d_area_entered(area):
-	%RisingAntiMathJuice.x = 795
-	%RisingAntiMathJuice.y = -702
+func _on_area_2d_body_exited(body):
+	var starting_mana = get_node("Wizard").mana
+	%RisingAntiMathJuice.position.x = 795
+	%RisingAntiMathJuice.position.y = -702
+	while get_node("Wizard").mana == starting_mana:
+		%RisingAntiMathJuice.position.y += -5
+		await get_tree().create_timer(0.1).timeout
+		
 	pass # Replace with function body.
