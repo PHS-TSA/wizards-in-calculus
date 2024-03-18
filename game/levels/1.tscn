@@ -37,6 +37,7 @@ unique_name_in_owner = true
 position = Vector2(576, 535)
 
 [node name="HUD" parent="." instance=ExtResource("5_d0k0g")]
+unique_name_in_owner = true
 
 [node name="QuickMathBall" parent="." instance=ExtResource("7_nlayy")]
 position = Vector2(545, -485)
