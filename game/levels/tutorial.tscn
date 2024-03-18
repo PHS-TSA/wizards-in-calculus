@@ -108,14 +108,13 @@ difficulty = 0
 
 [node name="ManaLabel" type="Label" parent="."]
 z_index = -5
-offset_left = 1811.0
-offset_top = 241.0
-offset_right = 2300.0
-offset_bottom = 342.0
+offset_left = 1846.0
+offset_top = 262.0
+offset_right = 2335.0
+offset_bottom = 363.0
 text = "Getting an anwser wrong uses up one of your mana!
 If you run out of mana, the game ends!
-However, defeating a math rock scores points.
-Solving problems also recharges and gives you more mana."
+"
 
 [node name="JumpLabel" type="Label" parent="."]
 z_index = -5

@@ -12,11 +12,22 @@ signal teleported(position: Vector2)
 
 
 # Called when the node enters the scene tree for the first time.
+
+#generate random num
+
+
 func _ready() -> void:
-	self.quick_math_label.text = self.question
-	self.quick_math_sprite.texture = load("res://assets/sprites/number_balls/%s.png" % self.answer)
-	self.add_to_group("quick_maths")
+
+	#var num: int = randi() % 9
+	self.quick_math_label.text = question
+	quick_math_sprite.texture = load("res://assets/sprites/number_balls_blank/1b.png")
 
 
 func teleport(value: int) -> void:
-	self.teleported.emit(self.teleport_position.global_position, value == self.answer)
+	if value == answer:
+		# gdlint:ignore = private-method-call
+		wizard._on_quick_math_ball_teleported(self.teleport_position.global_position)
+		wizard.walls = wizard.max_walls
+		wizard.jump = true
+	else:
+		wizard.mana -= 2
