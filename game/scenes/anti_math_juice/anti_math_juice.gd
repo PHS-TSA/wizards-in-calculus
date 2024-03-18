@@ -7,7 +7,6 @@ signal poisoned(amount: int)
 func _ready() -> void:
 	self.add_to_group("anti_math_juices")
 
-
 func _on_body_exited(_body: Node2D) -> void:
 
 	if _body.name == "Wizard":
@@ -16,5 +15,3 @@ func _on_body_exited(_body: Node2D) -> void:
 		if self.name == "RisingAntiMathJuice":
 			%RisingAntiMathJuice.position.x = 795
 			%RisingAntiMathJuice.position.y = -702
-
-	
