@@ -47,16 +47,12 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 	spawned.add_to_group("number_balls")
 
 
-func _on_anti_math_juice_poisoned() -> void:
+func _on_anti_math_juice_poisoned(amount: int) -> void:
 	self.wizard.position = self.spawn.global_position
-#Starts lava
-func _on_area_2d_body_exited():
-	var starting_mana = get_node("Wizard").mana
-	%RisingAntiMathJuice.position.x = 795
-	%RisingAntiMathJuice.position.y = -702
-	while get_node("Wizard").mana == starting_mana:
-		%RisingAntiMathJuice.position.y += -5
-		await get_tree().create_timer(0.1).timeout
+	wizard.on_anti_math_juice_poisoned(amount)
+
+
+func _on_wizard_mana_updated(mana: int) -> void:
 	if mana <= 0:
 		self.get_tree().change_scene_to_file.call_deferred(
 			"res://game/menus/game_over/game_over.tscn"
