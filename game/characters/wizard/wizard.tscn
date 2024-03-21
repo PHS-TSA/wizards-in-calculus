@@ -16,3 +16,6 @@ texture = ExtResource("2_nqjmu")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="BallSpawnPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true

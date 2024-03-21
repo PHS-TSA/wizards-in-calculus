@@ -40,7 +40,7 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 	var spawned: NumberBall = Ball.instantiate()
 	spawned.num = ball
 	spawned.rotation = direction
-	spawned.position = location + WIZARD_OFFSET
+	spawned.position = %Wizard.bsp.global_position
 	spawned.velocity = spawned.velocity.rotated(direction)
 	spawned.z_index = 20
 	add_child(spawned)

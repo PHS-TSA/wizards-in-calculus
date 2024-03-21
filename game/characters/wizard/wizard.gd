@@ -17,11 +17,13 @@ signal did_fire(num: int, angle: float, position: Vector2)
 ## How far the wizard can jump.
 @export var floaty: float = 150
 
-## How fast the wizard should stop after they stop jumping.
+## How fast the wizard  should stop after they stop jumping.
 @export var feather: int = 20
 
 ## Slow down, kid!
 @export var friction: int = 25
+
+@onready var bsp = %BallSpawnPoint
 
 ## Allow jumping without walls or floor.
 var jump := false
@@ -132,8 +134,8 @@ func firing() -> void:
 
 
 func fire(num: int) -> void:
-	var angle := self.global_position.angle_to_point(get_global_mouse_position())
-	self.did_fire.emit(num, angle, self.global_position)
+	var angle = %BallSpawnPoint.global_position.angle_to_point(get_global_mouse_position())
+	self.did_fire.emit(num, angle, %BallSpawnPoint.global_position)
 
 
 func on_rock_hit(correct: bool, points: int) -> void:
