@@ -54,6 +54,7 @@ jobs:
         with:
           version: ${{ env.GODOT_VERSION }}
           use-dotnet: false
+          include-templates: true
       - name: 🔬 Verify setup
         run: godot --version
       - name: 🔌 Make and delete directories
