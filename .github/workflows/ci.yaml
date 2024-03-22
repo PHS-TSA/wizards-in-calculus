@@ -83,7 +83,7 @@ jobs:
           persist-credentials: false
           set-safe-directory: true
       - name: 🤖 Set up Godot
-        uses: Scony/godot-gdscript-toolkit@cbd7a1dcff14cd272787a4ca497c7ff328714a6c # master
+        uses: Scony/godot-gdscript-toolkit@33b918a3b643a41bce61497d8312a26d90704cbe # master
         with:
           version: ${{ env.GDTOOLKIT_VERSION }}
       - name: 🔬 Verify setup
@@ -106,7 +106,7 @@ jobs:
           persist-credentials: false
           set-safe-directory: true
       - name: 🤖 Set up Godot
-        uses: Scony/godot-gdscript-toolkit@cbd7a1dcff14cd272787a4ca497c7ff328714a6c # master
+        uses: Scony/godot-gdscript-toolkit@33b918a3b643a41bce61497d8312a26d90704cbe # master
         with:
           version: ${{ env.GDTOOLKIT_VERSION }}
       - name: 🔬 Verify setup
