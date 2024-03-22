@@ -167,7 +167,7 @@ jobs:
           name: build-web
           path: "./build"
       - name: 🔧 Deploy
-        uses: denoland/deployctl@1e1637600646cbc6826a4bacd359713fc24d25b3 # 1.11.0
+        uses: denoland/deployctl@612f83df2b874c6908d68de5cf3f36a6538fa8f7 # 1.12.0
         with:
           project: "wizards-in-calculus"
           entrypoint: server/server.ts
