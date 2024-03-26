@@ -50,7 +50,7 @@ jobs:
           persist-credentials: false
           set-safe-directory: true
       - name: 🤖 Set up Godot
-        uses: chickensoft-games/setup-godot@1dc3741f474fcf64a3b302d5fdd263010c200866 # v2.0.0
+        uses: chickensoft-games/setup-godot@d83cb325faa483bee1923496b6f89cff511581a6 # v2.0.1
         with:
           version: ${{ env.GODOT_VERSION }}
           use-dotnet: false
