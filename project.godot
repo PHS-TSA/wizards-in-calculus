@@ -33,7 +33,8 @@ gdscript/warnings/return_value_discarded=1
 
 window/size/viewport_width=1280
 window/size/viewport_height=800
-window/stretch/aspect="ignore"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [dotnet]
 
