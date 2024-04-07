@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://wtel0rubnhod"]
+
+[ext_resource type="Texture2D" uid="uid://dylon3a25hyr1" path="res://assets/sprites/menu.webp" id="1_xj1kq"]
+[ext_resource type="FontFile" uid="uid://cacer1um2xmlh" path="res://assets/fonts/font.otf" id="2_f0lp6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgdev"]
+font = ExtResource("2_f0lp6")
+font_size = 72
+shadow_size = 12
+shadow_color = Color(0.374139, 0.374139, 0.374139, 1)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1h6t2"]
+font = ExtResource("2_f0lp6")
+font_size = 30
+shadow_size = 12
+shadow_color = Color(0.374139, 0.374139, 0.374139, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_xj1kq")
+
+[node name="Camera" type="Camera2D" parent="Background"]
+
+[node name="TitleLabel" type="Label" parent="Background"]
+offset_left = -271.0
+offset_top = -346.0
+offset_right = 246.0
+offset_bottom = -249.0
+text = "Wizards In Calculus"
+label_settings = SubResource("LabelSettings_bgdev")
+
+[node name="TitleLabel2" type="Label" parent="Background"]
+offset_left = -257.0
+offset_top = -218.0
+offset_right = 260.0
+offset_bottom = -121.0
+text = "The End!!!!!!!"
+label_settings = SubResource("LabelSettings_bgdev")
+horizontal_alignment = 1
+
+[node name="TitleLabel3" type="Label" parent="Background"]
+offset_left = -66.0
+offset_top = 246.0
+offset_right = 451.0
+offset_bottom = 343.0
+text = "The prophecy is fulfilled"
+label_settings = SubResource("LabelSettings_1h6t2")
+horizontal_alignment = 1

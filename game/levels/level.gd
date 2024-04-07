@@ -59,3 +59,11 @@ func _on_wizard_mana_updated(mana: int) -> void:
 		)
 	else:
 		hud.on_wizard_mana_updated(mana)
+		
+func _on_area_2d_body_exited(body):
+	var starting_mana = get_node("Wizard").mana
+	%RisingAntiMathJuice.position.x = 795
+	%RisingAntiMathJuice.position.y = -702
+	while get_node("Wizard").mana == starting_mana:
+		%RisingAntiMathJuice.position.y += -5
+		await get_tree().create_timer(0.1).timeout

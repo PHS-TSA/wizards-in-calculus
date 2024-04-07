@@ -156,6 +156,3 @@ func on_quick_math_ball_teleported(location: Vector2, correct: bool) -> void:
 		self.velocity.y = 0
 		await get_tree().create_timer(0.1).timeout
 		self.jump = true
-		self.mana -= 1
-	else:
-		self.mana -= 2
