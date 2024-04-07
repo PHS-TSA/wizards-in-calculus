@@ -15,6 +15,12 @@ func _ready() -> void:
 	#var _connection_err := wizard.score_updated.connect(hud.on_wizard_score_updated)
 	#var _connection_err2 := wizard.mana_updated.connect(self._on_wizard_mana_updated)
 	var _connection_err3 := wizard.did_fire.connect(self._on_wizard_did_fire)
+	while true:
+		if Globals.mana <= 0:
+			self.get_tree().change_scene_to_file.call_deferred(
+				"res://game/menus/game_over/game_over.tscn"
+			)
+		await get_tree().create_timer(0.5).timeout
 
 
 func _process(_delta: float) -> void:
@@ -52,18 +58,13 @@ func _on_anti_math_juice_poisoned(amount: int) -> void:
 	wizard.on_anti_math_juice_poisoned(amount)
 
 
-func _on_wizard_mana_updated(mana: int) -> void:
-	if mana <= 0:
-		self.get_tree().change_scene_to_file.call_deferred(
-			"res://game/menus/game_over/game_over.tscn"
-		)
-	else:
-		hud.on_wizard_mana_updated(mana)
+
+	
 		
 func _on_area_2d_body_exited(body):
-	var starting_mana = get_node("Wizard").mana
+	var starting_mana = Globals.mana
 	%RisingAntiMathJuice.position.x = 795
 	%RisingAntiMathJuice.position.y = -702
-	while get_node("Wizard").mana == starting_mana:
+	while Globals.mana == starting_mana:
 		%RisingAntiMathJuice.position.y += -5
 		await get_tree().create_timer(0.1).timeout
