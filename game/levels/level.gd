@@ -12,8 +12,8 @@ const WIZARD_OFFSET := Vector2(12, -8)
 
 func _ready() -> void:
 	# Get the Wizard, and pass on the score_updated signal to the HUD
-	var _connection_err := wizard.score_updated.connect(hud.on_wizard_score_updated)
-	var _connection_err2 := wizard.mana_updated.connect(self._on_wizard_mana_updated)
+	#var _connection_err := wizard.score_updated.connect(hud.on_wizard_score_updated)
+	#var _connection_err2 := wizard.mana_updated.connect(self._on_wizard_mana_updated)
 	var _connection_err3 := wizard.did_fire.connect(self._on_wizard_did_fire)
 
 

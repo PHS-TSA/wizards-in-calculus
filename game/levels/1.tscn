@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://br7l4028dvs6n"]
+[gd_scene load_steps=9 format=3 uid="uid://br7l4028dvs6n"]
 
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="1_6m48w"]
 [ext_resource type="Script" path="res://game/levels/level.gd" id="1_bwyiu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxw6ee0kfg0yk" path="res://game/scenes/anti_math_juice/anti_math_juice.tscn" id="5_dhd8p"]
 [ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://game/scenes/checkpoint/checkpoint.tscn" id="7_3ft47"]
 [ext_resource type="PackedScene" uid="uid://bkxaf8d4e86ux" path="res://game/scenes/portal/portal.tscn" id="8_ppled"]
+[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="8_x531k"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bwyiu")
@@ -46,14 +47,28 @@ position = Vector2(2688, 370)
 scale = Vector2(99, 1)
 
 [node name="CollisionShape" parent="AntiMathJuice" index="0"]
-position = Vector2(0.424242, 9.25)
+position = Vector2(0.292929, 1)
 
 [node name="Checkpoint" parent="." instance=ExtResource("7_3ft47")]
-position = Vector2(2525, 310)
+position = Vector2(2525, 312)
 
 [node name="Portal" parent="." instance=ExtResource("8_ppled")]
 position = Vector2(4167, -157)
 scale = Vector2(4.50412, 13.7367)
 level = 2
+
+[node name="Rock" parent="." instance=ExtResource("8_x531k")]
+position = Vector2(1958, 140)
+rotation = -1.56158
+answer = 4
+question = "9-5"
+difficulty = 6
+
+[node name="Rock2" parent="." instance=ExtResource("8_x531k")]
+position = Vector2(3795, 229)
+scale = Vector2(3.94143, 3.55972)
+answer = 3
+question = "1+1+1"
+difficulty = 5
 
 [editable path="AntiMathJuice"]

@@ -1,8 +1,8 @@
 class_name Wizard
 extends CharacterBody2D
 
-signal score_updated(score: int)
-signal mana_updated(mana: int)
+#signal score_updated(score: int)
+#signal mana_updated(mana: int)
 signal did_fire(num: int, angle: float, position: Vector2)
 
 ## You can guess.
@@ -28,15 +28,15 @@ signal did_fire(num: int, angle: float, position: Vector2)
 ## Allow jumping without walls or floor.
 var jump := false
 
-var score := 0:
-	set(value):
-		score = value
-		self.score_updated.emit(score)
+#var score := 0:
+	#set(value):
+		#score = value
+		#self.score_updated.emit(score)
 
-var mana := 20:
-	set(value):
-		mana = value
-		self.mana_updated.emit(mana)
+#var mana := 20:
+	#set(value):
+		#mana = value
+		#self.mana_updated.emit(mana)
 
 var times := 1.0
 
@@ -52,9 +52,9 @@ static var max_walls := 3
 
 func _process(_delta: float) -> void:
 	firing()
-	if self.score >= 100 * self.times:  # Game Over!!
+	if Globals.score >= 100 * self.times:  # Game Over!!
 		self.times += 0.5
-		self.mana += 1
+		Globals.mana += 1
 
 
 func _physics_process(delta: float) -> void:
@@ -140,13 +140,13 @@ func fire(num: int) -> void:
 
 func on_rock_hit(correct: bool, points: int) -> void:
 	if correct:
-		self.score += points
+		Globals.score += points
 	else:
-		self.mana -= points
+		Globals.mana -= 1
 
 
 func on_anti_math_juice_poisoned(amount: int) -> void:
-	self.mana -= amount
+	Globals.mana -= amount
 
 
 func on_quick_math_ball_teleported(location: Vector2, correct: bool) -> void:

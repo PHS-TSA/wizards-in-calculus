@@ -100,26 +100,58 @@ text = "Make sure to hold
 jump to get the maximum height!"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 1728.0
+offset_top = -189.0
+offset_right = 1950.0
+offset_bottom = -127.0
+text = "Whats the root!"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+z_index = 4096
+offset_left = 1793.0
+offset_top = -99.0
+offset_right = 2015.0
+offset_bottom = -37.0
+text = "Multiply the same number
+ twice to get it!"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+z_index = 4096
+offset_left = 1793.0
+offset_top = -99.0
+offset_right = 2015.0
+offset_bottom = -37.0
+text = "Multiply the same number
+ twice to get it!"
+horizontal_alignment = 1
+
 [node name="Tree" parent="." instance=ExtResource("7_lym6b")]
 position = Vector2(1909, -214)
 answer = 5
 question = "25"
+difficulty = 14
 
 [node name="Rock6" parent="." instance=ExtResource("3_ay7so")]
 position = Vector2(1572, -173)
 scale = Vector2(3.52, 4.08)
 answer = 4
 question = "8/2"
+difficulty = 5
 
 [node name="Tree2" parent="." instance=ExtResource("7_lym6b")]
 position = Vector2(2249, -1240)
 answer = 7
 question = "49"
+difficulty = 10
 
 [node name="Tree3" parent="." instance=ExtResource("7_lym6b")]
 position = Vector2(1858, -872)
 answer = 9
 question = "81"
+difficulty = 13
 
 [node name="Portal" parent="." instance=ExtResource("8_jgbpn")]
 position = Vector2(2820, 769)

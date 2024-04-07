@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdp5j7e8lhf3w"]
+[gd_scene load_steps=11 format=3 uid="uid://bdp5j7e8lhf3w"]
 
 [ext_resource type="Script" path="res://game/levels/level.gd" id="1_7dnr3"]
 [ext_resource type="TileSet" uid="uid://du4mlit2n1o7c" path="res://assets/tilesets/tiles.tres" id="2_qmu7b"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4k3eyocn7g2" path="res://game/components/heads_up/heads_up.tscn" id="6_5n7x3"]
 [ext_resource type="PackedScene" uid="uid://bve1ycnoxavc8" path="res://game/scenes/checkpoint/checkpoint.tscn" id="8_gnsb5"]
 [ext_resource type="PackedScene" uid="uid://bkxaf8d4e86ux" path="res://game/scenes/portal/portal.tscn" id="9_67q17"]
+[ext_resource type="PackedScene" uid="uid://dxtj2socpdo5p" path="res://game/spawnables/rock/rock.tscn" id="9_wpipw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhkh3"]
 
@@ -107,7 +108,7 @@ layer_0/tile_data = PackedInt32Array(65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 6553
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Checkpoint" parent="." instance=ExtResource("8_gnsb5")]
-position = Vector2(608, -988)
+position = Vector2(608, -984)
 
 [node name="QuickMathBall5" parent="." instance=ExtResource("5_pdxgt")]
 position = Vector2(867, -1268)
@@ -127,6 +128,14 @@ level = 4
 [node name="AntiMathJuice" parent="." instance=ExtResource("5_yu22x")]
 position = Vector2(191, 77)
 scale = Vector2(8.72, 1)
+
+[node name="Rock" parent="." instance=ExtResource("9_wpipw")]
+position = Vector2(564, -698)
+rotation = 0.840948
+scale = Vector2(3.01904, 3.29863)
+answer = 2
+question = "8/4"
+difficulty = 5
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
