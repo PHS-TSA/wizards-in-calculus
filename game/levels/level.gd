@@ -12,9 +12,15 @@ const WIZARD_OFFSET := Vector2(12, -8)
 
 func _ready() -> void:
 	# Get the Wizard, and pass on the score_updated signal to the HUD
-	var _connection_err := wizard.score_updated.connect(hud.on_wizard_score_updated)
-	var _connection_err2 := wizard.mana_updated.connect(self._on_wizard_mana_updated)
+	#var _connection_err := wizard.score_updated.connect(hud.on_wizard_score_updated)
+	#var _connection_err2 := wizard.mana_updated.connect(self._on_wizard_mana_updated)
 	var _connection_err3 := wizard.did_fire.connect(self._on_wizard_did_fire)
+	while true:
+		if Globals.mana <= 0:
+			self.get_tree().change_scene_to_file.call_deferred(
+				"res://game/menus/game_over/game_over.tscn"
+			)
+		await get_tree().create_timer(0.5).timeout
 
 
 func _process(_delta: float) -> void:
@@ -40,7 +46,7 @@ func _on_wizard_did_fire(ball: int, direction: float, location: Vector2) -> void
 	var spawned: NumberBall = Ball.instantiate()
 	spawned.num = ball
 	spawned.rotation = direction
-	spawned.position = location + WIZARD_OFFSET
+	spawned.position = %Wizard.bsp.global_position
 	spawned.velocity = spawned.velocity.rotated(direction)
 	spawned.z_index = 20
 	add_child(spawned)
@@ -52,10 +58,13 @@ func _on_anti_math_juice_poisoned(amount: int) -> void:
 	wizard.on_anti_math_juice_poisoned(amount)
 
 
-func _on_wizard_mana_updated(mana: int) -> void:
-	if mana <= 0:
-		self.get_tree().change_scene_to_file.call_deferred(
-			"res://game/menus/game_over/game_over.tscn"
-		)
-	else:
-		hud.on_wizard_mana_updated(mana)
+
+	
+		
+func _on_area_2d_body_exited(body):
+	var starting_mana = Globals.mana
+	%RisingAntiMathJuice.position.x = 795
+	%RisingAntiMathJuice.position.y = -702
+	while Globals.mana == starting_mana:
+		%RisingAntiMathJuice.position.y += -5
+		await get_tree().create_timer(0.1).timeout

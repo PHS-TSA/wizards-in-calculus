@@ -104,7 +104,7 @@ position = Vector2(1689, 304)
 scale = Vector2(5, 8)
 answer = 1
 question = "0+1"
-difficulty = 0
+difficulty = 5
 
 [node name="ManaLabel" type="Label" parent="."]
 z_index = -5
@@ -159,7 +159,7 @@ rotation = -0.760964
 scale = Vector2(6, 8)
 answer = 2
 question = "4-2"
-difficulty = 0
+difficulty = 5
 
 [node name="AntiMathJuice" parent="." instance=ExtResource("5_76m1h")]
 z_index = 99
@@ -177,7 +177,7 @@ position = Vector2(566, 541)
 
 [node name="Checkpoint" parent="." instance=ExtResource("6_newtr")]
 z_index = -5
-position = Vector2(3087, 390)
+position = Vector2(3085, 399)
 
 [node name="MainPortal" parent="." instance=ExtResource("7_cw3s8")]
 position = Vector2(3645, 213)

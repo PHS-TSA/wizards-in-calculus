@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1
@@ -29,7 +33,8 @@ gdscript/warnings/return_value_discarded=1
 
 window/size/viewport_width=1280
 window/size/viewport_height=800
-window/stretch/aspect="ignore"
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [dotnet]
 

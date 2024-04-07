@@ -9,4 +9,8 @@ func _ready() -> void:
 
 
 func _on_body_exited(_body: Node2D) -> void:
-	self.poisoned.emit(5)
+	if _body.name == "Wizard":
+		self.poisoned.emit(5)
+		if self.name == "RisingAntiMathJuice":
+			%RisingAntiMathJuice.position.x = 795
+			%RisingAntiMathJuice.position.y = -702
