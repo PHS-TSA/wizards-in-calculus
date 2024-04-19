@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: 📚 Git checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           submodules: recursive
           clean: true
@@ -63,7 +63,7 @@ jobs:
         run: godot --headless ${{ matrix.godot-flags }}
       - name: ⚙️ Upload build
         if: matrix.target == 'web'
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
+        uses: actions/upload-artifact@1746f4ab65b179e0ea60a494b83293b640dd5bba # v4.3.2
         with:
           name: build-${{ matrix.target }}
           path: "./build"
@@ -77,7 +77,7 @@ jobs:
 
     steps:
       - name: 📚 Git checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           submodules: recursive
           clean: true
@@ -100,7 +100,7 @@ jobs:
 
     steps:
       - name: 📚 Git checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           submodules: recursive
           clean: true
@@ -125,7 +125,7 @@ jobs:
 
     steps:
       - name: 📚 Git checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           submodules: recursive
           clean: true
@@ -155,14 +155,14 @@ jobs:
 
     steps:
       - name: 📚 Git checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
         with:
           submodules: recursive
           clean: true
           persist-credentials: false
           set-safe-directory: true
       - name: ⚙️ Download build
-        uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
+        uses: actions/download-artifact@8caf195ad4b1dee92908e23f56eeb0696f1dd42d # v4.1.5
         with:
           name: build-web
           path: "./build"
