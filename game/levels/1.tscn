@@ -28,6 +28,12 @@ position = Vector2(574, 536)
 
 [node name="Camera" type="Camera2D" parent="Wizard"]
 zoom = Vector2(2, 2)
+limit_left = -180
+limit_top = -300
+limit_right = 2700
+limit_bottom = 730
+limit_smoothed = true
+editor_draw_limits = true
 
 [node name="Spawn" type="Marker2D" parent="."]
 unique_name_in_owner = true
